@@ -531,6 +531,23 @@ img {
     font-weight: 800;
 }
 
+/* --- HERO TITLE PREFIX ("Indo-German Conference on") --- */
+.hero-title-pre {
+    display: block;
+    margin-bottom: 12px;
+
+    color: #7dd7f4;
+    /* Bright cyan accent */
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(20px, 2.5vw, 36px);
+    /* Clean, small, readable proportion */
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    text-transform: none;
+    /* Keep natural title casing */
+}
+
 .hero h1 span {
     display: block;
     color: #b8e8f7;
