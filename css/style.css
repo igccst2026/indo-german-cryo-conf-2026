@@ -1229,94 +1229,17 @@ img {
     margin-bottom: 55px;
 }
 
-.speaker-controls {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding-bottom: 5px;
-}
-
-.carousel-button {
-    width: 48px;
-    height: 48px;
+/* Grid Container */
+.speakers-grid {
     display: grid;
-    place-items: center;
-    padding: 0;
-
-    color: var(--ink);
-    background: white;
-    border: 1px solid var(--line);
-    border-radius: 50%;
-    cursor: pointer;
-
-    transition:
-        color .25s ease,
-        background .25s ease,
-        border-color .25s ease,
-        transform .25s var(--ease);
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 40px;
 }
 
-.carousel-button:hover {
-    color: white;
-    background: var(--blue);
-    border-color: var(--blue);
-    transform: translateY(-2px);
-}
-
-.carousel-button:focus-visible {
-    outline: 3px solid rgba(8, 120, 184, .25);
-    outline-offset: 3px;
-}
-
-.carousel-progress {
-    min-width: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-
-    color: var(--muted);
-    font-family: "Manrope", sans-serif;
-    font-size: 11px;
-    font-weight: 800;
-}
-
-.carousel-progress i {
-    width: 18px;
-    height: 1px;
-    background: var(--line);
-}
-
-.carousel-progress span:first-child {
-    color: var(--blue);
-}
-
-.speakers-carousel {
-    overflow-x: auto;
-    padding: 10px 0 30px;
-    scrollbar-width: none;
-    cursor: grab;
-    scroll-behavior: smooth;
-    overscroll-behavior-x: contain;
-}
-
-.speakers-carousel:active {
-    cursor: grabbing;
-}
-
-.speakers-carousel::-webkit-scrollbar {
-    display: none;
-}
-
-.speakers-track {
-    display: flex;
-    gap: 20px;
-    width: max-content;
-}
-
+/* Card Styling */
 .speaker-card {
-    width: 290px;
-    flex: 0 0 290px;
+    width: 100%; /* Spans full width of its grid column */
     background: white;
     border: 1px solid var(--line);
     border-radius: 12px;
@@ -1406,6 +1329,26 @@ img {
     color: var(--muted);
     font-size: 12px;
     line-height: 1.5;
+}
+
+/* Responsive Grid Breakpoints */
+@media (max-width: 1200px) {
+    .speakers-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .speakers-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .speakers-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 
