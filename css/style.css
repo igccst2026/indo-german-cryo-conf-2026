@@ -1395,7 +1395,7 @@ img {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 520px) {
     .speakers-grid {
         grid-template-columns: 1fr;
     }
@@ -1405,77 +1405,137 @@ img {
    Committee
 ========================================================= */
 
+/* Grid container: 2 columns on desktop, 1 on mobile */
 .committee-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-top: 40px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 32px;
 }
 
+/* Card container */
 .committee-card {
-    background: white;
-    border: 1px solid var(--line);
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
     border-radius: 12px;
-    padding: 32px;
-    position: relative;
-    transition: transform .35s var(--ease), box-shadow .35s var(--ease);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .committee-card:hover {
     transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
+    border-color: #cbd5e1;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
 }
 
+/* Flex layout inside each card */
+.committee-card-body {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    height: 100%;
+}
+
+/* Fixed width container for photos */
+.committee-photo-wrap {
+    width: 140px;
+    min-width: 140px;
+    background: #f1f5f9;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+/* Force uniform image aspect ratio and fill */
+.committee-photo-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.committee-card:hover .committee-photo-wrap img {
+    transform: scale(1.05);
+}
+
+/* Text & Content details styling */
+.committee-info {
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Keeps badge inline rather than stretched */
+    flex: 1;
+}
+
+/* Inline badge tag (fixes the full-width stretch issue) */
 .committee-badge {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    width: auto !important; /* Overrides block/stretched behavior */
     padding: 4px 10px;
-    background: var(--blue);
-    color: white;
+    background-color: #0284c7;
+    color: #ffffff;
     font-size: 10px;
     font-weight: 800;
-    letter-spacing: 1px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
     border-radius: 4px;
-    margin-bottom: 16px;
-}
-
-.committee-badge.secondary {
-    background: var(--ink);
+    margin-bottom: 10px;
+    line-height: 1;
 }
 
 .committee-info h3 {
-    font-size: 20px;
-    color: var(--ink);
-    margin: 0 0 8px;
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 4px 0;
+    line-height: 1.3;
 }
 
 .committee-role {
-    color: var(--blue);
-    font-weight: 700;
-    font-size: 13px;
-    margin: 0;
-}
-
-.committee-dept, .committee-inst {
-    color: var(--muted);
-    font-size: 14px;
-    margin: 2px 0;
-}
-
-.committee-email {
-    display: inline-block;
-    margin-top: 14px;
-    color: var(--ink);
-    font-size: 13px;
+    color: #0284c7;
     font-weight: 600;
-    text-decoration: none;
-    transition: color .2s ease;
+    font-size: 13px;
+    margin: 0 0 6px 0;
+    line-height: 1.2;
 }
 
-.committee-email:hover {
-    color: var(--blue);
+.committee-dept, 
+.committee-inst {
+    color: #64748b;
+    font-size: 12.5px;
+    margin: 0;
+    line-height: 1.45;
 }
 
-.reveal {
+/* =========================================================
+   Responsive Adaptations
+========================================================= */
+
+@media (max-width: 1024px) {
+    .committee-grid {
+        grid-template-columns: 1fr; /* Switch to 1 column on smaller tablets */
+    }
+}
+
+@media (max-width: 520px) {
+    .committee-card-body {
+        flex-direction: column; /* Stack vertically on small mobile screens */
+    }
+
+    .committee-photo-wrap {
+        width: 100%;
+        min-width: 100%;
+        height: 220px;
+    }
+}
+
+/* Add this to style.css to force visibility if JavaScript fails */
+.committee-card.reveal {
     opacity: 1 !important;
     transform: none !important;
     visibility: visible !important;
@@ -2116,10 +2176,10 @@ img {
 
 
 /* =========================================================
-   RESPONSIVE — 600px
+   RESPONSIVE — 520px
 ========================================================= */
 
-@media (max-width: 600px) {
+@media (max-width: 520px) {
     .container {
         width: min(calc(100% - 32px), var(--container));
     }
