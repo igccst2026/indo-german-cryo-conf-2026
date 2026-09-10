@@ -2630,6 +2630,91 @@ img {
     }
 }
 
+/* =========================================================
+   MOBILE FIXES FOR SMALL SCREENS (<= 450px / 400px)
+========================================================= */
+
+@media (max-width: 450px) {
+  /* 1. Prevent Top Institutional Bar Overflow */
+  .institution-bar {
+    height: auto !important;
+    padding: 6px 0;
+  }
+
+  .institution-inner {
+    gap: 10px;
+  }
+
+  .institution-logos {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .institution-logos a {
+    padding: 3px 6px;
+  }
+
+  .institution-logos img,
+  .institution-logos svg {
+    height: 20px;
+    max-width: 50px;
+    min-width: 14px;
+  }
+
+  /* 2. Fix Hero Heading & Meta Grid Clipping */
+  .hero-inner {
+    padding-top: 30px;
+    padding-bottom: 40px;
+  }
+
+  .hero h1 {
+    font-size: clamp(34px, 10vw, 48px) !important;
+    word-break: break-word;
+  }
+
+  .hero-title-pre {
+    font-size: 18px !important;
+  }
+
+  .hero-meta {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 10px 0 !important;
+  }
+
+  .hero-meta-col {
+    padding: 12px 0 !important;
+    width: 100%;
+  }
+
+  .meta-divider {
+    width: 100% !important;
+    height: 1px !important;
+  }
+
+  /* 3. Fix Timeline Alignment */
+  .timeline-item {
+    grid-template-columns: 36px 70px 1fr !important;
+    gap: 8px;
+  }
+
+  .timeline-date span {
+    font-size: 26px !important;
+  }
+
+  /* 4. Fix Speaker & Committee Card Overflow */
+  .speaker-card {
+    width: 100% !important;
+    flex-basis: 100% !important;
+  }
+
+  /* 5. Fix Accommodation Features Padding */
+  .accommodation-card {
+    padding: 20px 16px !important;
+  }
+}
+
 
 /* =========================================================
    REDUCED MOTION ACCESSIBILITY
