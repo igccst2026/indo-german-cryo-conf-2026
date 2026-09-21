@@ -2294,10 +2294,10 @@ img {
 
 
 /* =========================================================
-   RESPONSIVE — 1100px
+   RESPONSIVE — 1200px
 ========================================================= */
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
     .container {
         width: min(calc(100% - 40px), var(--container));
     }
@@ -2350,7 +2350,7 @@ img {
    RESPONSIVE — 850px
 ========================================================= */
 
-@media (max-width: 850px) {
+@media (max-width: 900px) {
     .institution-bar {
         height: 58px;
     }
