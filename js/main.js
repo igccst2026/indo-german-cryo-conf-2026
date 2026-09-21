@@ -292,6 +292,8 @@ document.addEventListener("DOMContentLoaded", () => {
         ".speaker-card, " +
         ".registration-copy, " +
         ".registration-action, " +
+        ".sponsorship-copy, " +
+        ".sponsorship-action, " +
         ".venue-copy, " +
         ".map-frame"
     );

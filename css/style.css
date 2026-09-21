@@ -1953,6 +1953,148 @@ img {
 }
 
 /* =========================================================
+   SPONSORSHIP CTA SECTION
+========================================================= */
+
+.sponsorship-section {
+    position: relative;
+    padding: 100px 0;
+    color: white;
+    background:
+        radial-gradient(circle at 20% 50%, rgba(53, 185, 233, .22), transparent 35%),
+        linear-gradient(135deg, #061522, #0b3048);
+    overflow: hidden;
+}
+
+.sponsorship-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: .08;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, .45) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .45) 1px, transparent 1px);
+    background-size: 60px 60px;
+}
+
+.sponsorship-inner {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.sponsorship-copy h2 {
+    margin: 0;
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(38px, 4.5vw, 62px);
+    line-height: .98;
+    letter-spacing: -.06em;
+    color: white;
+}
+
+.sponsorship-copy h2 span {
+    display: block;
+    color: #75d3ef;
+}
+
+.sponsorship-copy p {
+    max-width: 580px;
+    margin: 20px 0 24px;
+    color: #a8c0cc;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.sponsorship-highlights {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sponsorship-highlights li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #e2f1f7;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.sponsorship-highlights i {
+    color: #35b9e9;
+    font-size: 15px;
+}
+
+/* Card Container */
+.sponsorship-card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: var(--radius-md);
+    padding: 40px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.card-tag {
+    color: #75d3ef;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.sponsorship-card h3 {
+    margin: 0;
+    font-family: "Manrope", sans-serif;
+    font-size: 24px;
+    color: white;
+}
+
+.sponsorship-card p {
+    margin: 0;
+    color: #9fb2bd;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.sponsorship-card small {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #718995;
+    font-size: 11px;
+}
+
+/* Force visibility for sponsorship elements */
+.sponsorship-copy.reveal,
+.sponsorship-action.reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+}
+
+/* Mobile Responsive Adapters */
+@media (max-width: 850px) {
+    .sponsorship-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .sponsorship-card {
+        padding: 28px 20px;
+    }
+}
+
+/* =========================================================
    Contact
 ========================================================= */
 
