@@ -136,58 +136,98 @@
     <!-- =========================================================
          NAVIGATION
     ========================================================= -->
+    <!-- =========================================================
+        HEADER & NAVIGATION SECTION
+    ========================================================= -->
     <header class="site-header" id="siteHeader">
       <div class="container nav-inner">
+        <!-- Brand Logo -->
         <a href="#home" class="brand" aria-label="IGCCST 2026 home">
           <span class="brand-accent">IGCCST</span>
           <span class="brand-year">26</span>
         </a>
 
+        <!-- Desktop Navigation -->
         <nav class="desktop-nav" aria-label="Primary navigation">
-          <a href="#about">Conference</a>
-          <a href="#themes">Themes</a>
-          <a href="#dates">Dates</a>
-          <a href="#speakers">Speakers</a>
-          <a href="#committee">Committee</a>
-          <a href="#venue">Venue</a>
+          <!-- Group 1: About -->
+          <div class="nav-dropdown">
+            <button class="dropdown-toggle" aria-expanded="false">
+              About <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="dropdown-menu">
+              <a href="#about">Conference</a>
+              <a href="#themes">Themes</a>
+              <a href="#dates">Dates</a>
+            </div>
+          </div>
+
+          <!-- Group 2: People -->
+          <div class="nav-dropdown">
+            <button class="dropdown-toggle" aria-expanded="false">
+              People <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="dropdown-menu">
+              <a href="#speakers">Speakers</a>
+              <a href="#committee">Committee</a>
+            </div>
+          </div>
+
+          <!-- Group 3: Attend & Awards -->
+          <div class="nav-dropdown">
+            <button class="dropdown-toggle" aria-expanded="false">
+              Attend <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="dropdown-menu">
+              <a href="#registration">Registration</a>
+              <a href="#venue">Venue</a>
+              <a href="#accommodation">Accommodation</a>
+              <a href="#prizes" class="highlight-link">
+                <i class="fas fa-trophy"></i> Prize Money
+              </a>
+            </div>
+          </div>
+
+          <!-- Direct Links -->
           <a href="#sponsorship">Sponsorship</a>
-          <a href="#accommodation">Accommodation</a>
           <a href="#contact">Contact</a>
 
+          <!-- Register CTA Button -->
           <a
             href="https://forms.gle/NYcDnDdZqwisjumMA"
             target="_blank"
             rel="noopener noreferrer"
             class="nav-cta"
           >
-            Register
-            <span>↗</span>
+            Register <span>↗</span>
           </a>
         </nav>
 
+        <!-- Mobile Hamburger Toggle -->
         <button
           class="menu-toggle"
           id="menuToggle"
-          type="button"
-          aria-label="Open navigation"
+          aria-label="Toggle navigation menu"
           aria-expanded="false"
-          aria-controls="mobileNav"
         >
           <span></span>
           <span></span>
         </button>
       </div>
 
-      <!-- MOBILE NAV -->
+      <!-- Mobile Navigation Drawer -->
       <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
         <a href="#about">Conference</a>
         <a href="#themes">Themes</a>
         <a href="#dates">Dates</a>
         <a href="#speakers">Speakers</a>
         <a href="#committee">Committee</a>
+        <a href="#registration">Registration</a>
         <a href="#venue">Venue</a>
-        <a href="#sponsorship">Sponsorship</a>
         <a href="#accommodation">Accommodation</a>
+        <a href="#prizes" class="mobile-highlight-link">
+          <i class="fas fa-trophy"></i> Prize Money
+        </a>
+        <a href="#sponsorship">Sponsorship</a>
         <a href="#contact">Contact</a>
 
         <a
@@ -255,7 +295,7 @@
             <!-- Column 1: Date -->
             <div class="hero-meta-col event-date">
               <span class="meta-label">DATE</span>
-              <span class="meta-number">09—11</span>
+              <span class="meta-number">09 — 11</span>
               <strong>NOVEMBER</strong>
               <span class="meta-year">2026</span>
             </div>
@@ -277,6 +317,15 @@
               <span class="meta-label">REGISTRATION</span>
               <strong class="notice-free">FREE</strong>
               <span class="notice-text">* Student accommodation will be provided on a chargeable basis.</span>
+            </div>
+
+            <div class="meta-divider"></div>
+
+            <!-- Column 4: Prize Name & Details -->
+            <div class="hero-meta-col event-prizes">
+              <span class="meta-label">AWARDS</span>
+              <strong class="prize-title">THE DUTTA SUMMIT HONORS</strong>
+              <span class="prize-sub">Cash prizes for top presenters</span>
             </div>
           </div>
 
@@ -415,10 +464,10 @@
                 </p>
               </div>
 
-              <div class="theme-counter" aria-label="8 Research Themes">
+              <!-- <div class="theme-counter" aria-label="8 Research Themes">
                 <strong id="themeCount">08</strong>
                 <span>RESEARCH<br />AREAS</span>
-              </div>
+              </div> -->
             </div>
           </div>
 
@@ -621,11 +670,17 @@
 
               <div class="timeline-content">
                 <span class="timeline-status">DEADLINE</span>
-                <h3>Abstract Submission</h3>
-                <p>
-                  Submit your contribution before the abstract submission
-                  deadline.
-                </p>
+                <div>
+                  <a
+                  href="https://forms.gle/NYcDnDdZqwisjumMA"
+                  target="_blank">
+                    <h3>Abstract Submission</h3>
+                    <p>
+                      Submit your contribution before the abstract submission
+                      deadline.
+                    </p>
+                  </a>
+                </div>
               </div>
             </article>
 
@@ -1041,133 +1096,165 @@
           </div>
 
           <div class="committee-grid">
-  <!-- Chairman -->
-  <article class="committee-card reveal">
-    <div class="committee-card-body">
-      <div class="committee-photo-wrap">
-        <img
-          src="images/speakers/prof-parthasarathi-ghosh.png"
-          alt="Prof. Parthasarathi Ghosh"
-          loading="lazy"
-        />
-      </div>
-      <div class="committee-info">
-        <span class="committee-badge">CHAIRMAN</span>
-        <h3>Prof. Parthasarathi Ghosh</h3>
-        <p class="committee-role">Professor</p>
-        <p class="committee-dept">Cryogenic Engineering Centre</p>
-        <p class="committee-inst">
-          Indian Institute of Technology Kharagpur
-        </p>
-      </div>
-    </div>
-  </article>
 
-  <!-- Convenor -->
-  <article class="committee-card reveal">
-    <div class="committee-card-body">
-      <div class="committee-photo-wrap">
-        <img
-          src="images/speakers/prof-venimadhav-adyam.jpeg"
-          alt="Prof. Venimadhav Adyam"
-          loading="lazy"
-        />
-      </div>
-      <div class="committee-info">
-        <span class="committee-badge">CONVENOR</span>
-        <h3>Prof. Venimadhav Adyam</h3>
-        <p class="committee-role">Professor</p>
-        <p class="committee-dept">Cryogenic Engineering Centre</p>
-        <p class="committee-inst">
-          Indian Institute of Technology Kharagpur
-        </p>
-      </div>
-    </div>
-  </article>
+        <!-- Chairman -->
+        <article class="committee-card reveal">
+          <div class="committee-card-body">
+            <div class="committee-photo-wrap">
+              <img
+                src="images/speakers/prof-parthasarathi-ghosh.png"
+                alt="Prof. Parthasarathi Ghosh"
+                loading="lazy"
+              />
+            </div>
+            <div class="committee-info">
+              <span class="committee-badge">CHAIRMAN</span>
+              <h3>Prof. Parthasarathi Ghosh</h3>
+              <p class="committee-role">Professor</p>
+              <p class="committee-dept">Cryogenic Engineering Centre</p>
+              <p class="committee-inst">
+                Indian Institute of Technology Kharagpur
+              </p>
+            </div>
+          </div>
+        </article>
 
-  <!-- Convenor -->
-  <article class="committee-card reveal">
-    <div class="committee-card-body">
-      <div class="committee-photo-wrap">
-        <img
-          src="images/speakers/prof-dirk-lindackers.jpg"
-          alt="Prof. Dirk Lindackers"
-          loading="lazy"
-        />
-      </div>
-      <div class="committee-info">
-        <span class="committee-badge">CONVENOR</span>
-        <h3>Prof. Dirk Lindackers</h3>
-        <p class="committee-role">Professor</p>
-        <p class="committee-dept">IFW Dresden, Germany</p>
-      </div>
-    </div>
-  </article>
+        <!-- Convenor -->
+        <article class="committee-card reveal">
+          <div class="committee-card-body">
+            <div class="committee-photo-wrap">
+              <img
+                src="images/speakers/prof-venimadhav-adyam.jpeg"
+                alt="Prof. Venimadhav Adyam"
+                loading="lazy"
+              />
+            </div>
+            <div class="committee-info">
+              <span class="committee-badge">CONVENOR</span>
+              <h3>Prof. Venimadhav Adyam</h3>
+              <p class="committee-role">Professor</p>
+              <p class="committee-dept">Cryogenic Engineering Centre</p>
+              <p class="committee-inst">
+                Indian Institute of Technology Kharagpur
+              </p>
+            </div>
+          </div>
+        </article>
 
-  <!-- Co-Convenor -->
-  <article class="committee-card reveal">
-    <div class="committee-card-body">
-      <div class="committee-photo-wrap">
-        <img
-          src="images/speakers/dr-pavitra-sandilya.jpeg"
-          alt="Dr. Pavitra Sandilya"
-          loading="lazy"
-        />
+        <!-- Convenor -->
+        <article class="committee-card reveal">
+          <div class="committee-card-body">
+            <div class="committee-photo-wrap">
+              <img
+                src="images/speakers/prof-dirk-lindackers.jpg"
+                alt="Prof. Dirk Lindackers"
+                loading="lazy"
+              />
+            </div>
+            <div class="committee-info">
+              <span class="committee-badge">CONVENOR</span>
+              <h3>Prof. Dirk Lindackers</h3>
+              <p class="committee-role">Professor</p>
+              <p class="committee-dept">IFW Dresden, Germany</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Co-Convenor -->
+        <article class="committee-card reveal">
+          <div class="committee-card-body">
+            <div class="committee-photo-wrap">
+              <img
+                src="images/speakers/dr-pavitra-sandilya.jpeg"
+                alt="Dr. Pavitra Sandilya"
+                loading="lazy"
+              />
+            </div>
+            <div class="committee-info">
+              <span class="committee-badge">CO-CONVENOR</span>
+              <h3>Dr. Pavitra Sandilya</h3>
+              <p class="committee-role">Associate Professor</p>
+              <p class="committee-dept">Cryogenic Engineering Centre</p>
+              <p class="committee-inst">
+                Indian Institute of Technology Kharagpur
+              </p>
+            </div>
+          </div>
+        </article>
       </div>
-      <div class="committee-info">
-        <span class="committee-badge">CO-CONVENOR</span>
-        <h3>Dr. Pavitra Sandilya</h3>
-        <p class="committee-role">Associate Professor</p>
-        <p class="committee-dept">Cryogenic Engineering Centre</p>
-        <p class="committee-inst">
-          Indian Institute of Technology Kharagpur
-        </p>
-      </div>
-    </div>
-  </article>
-</div>
         </div>
       </section>
 
       <!-- =========================================================
-             REGISTRATION CTA
-        ========================================================= -->
+          REGISTRATION & PRIZE MONEY SECTION
+      ========================================================= -->
       <section class="registration-section" id="registration">
         <div class="registration-pattern" aria-hidden="true"></div>
 
         <div class="container registration-inner">
-          <div class="registration-copy reveal">
-            <span class="eyebrow light">PARTICIPATION</span>
-
+          <!-- Header Title (Spans full width above columns) -->
+          <div class="registration-header reveal">
+            <span class="eyebrow light">PARTICIPATION & AWARDS</span>
             <h2>
-              Be part of the
-              <span>conversation.</span>
+              Be part of the <span>conversation.</span><br />
+              Compete for <span>glory.</span>
             </h2>
-
-            <p>
-              Connect with researchers, scientists, and engineering pioneers
-              working at the frontier of cryogenic science and sustainable
-              energy.
-            </p>
           </div>
 
-          <div class="registration-action reveal">
-            <div class="free-badge">
-              <strong>FREE</strong>
-              <span>REGISTRATION</span>
+          <!-- Grid Container: Registration Left, Prizes Right -->
+          <div class="registration-grid">
+            <!-- COLUMN 1: Registration Card -->
+            <div class="registration-card reveal">
+              <div class="card-content">
+                <h3>Join the Conference</h3>
+                <p>
+                  Connect with researchers, scientists, and engineering pioneers at the frontier of cryogenic science and sustainable energy.
+                </p>
+              </div>
+
+              <div class="registration-action">
+                <div class="free-badge">
+                  <strong>FREE</strong>
+                  <span>REGISTRATION</span>
+                </div>
+
+                <a
+                  href="https://forms.gle/NYcDnDdZqwisjumMA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="button button-light button-large"
+                >
+                  Register Now
+                  <span class="button-arrow">↗</span>
+                </a>
+
+                <small>Registration is compulsory. No fee required.</small>
+              </div>
             </div>
 
-            <a
-              href="https://forms.gle/NYcDnDdZqwisjumMA"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="button button-light button-large"
-            >
-              Register Now
-              <span class="button-arrow">↗</span>
-            </a>
+            <!-- COLUMN 2: Prof. Dutta Award Box -->
+            <div class="prize-highlight-box reveal" id="prizes">
+              <div class="prize-badge">
+                <i class="fas fa-trophy"></i>
+                <span>Prestigious Honor</span>
+              </div>
+              
+              <h3>The Dutta Summit Honors</h3>
+              <p class="prize-tagline">
+                Excellence deserves recognition. Present your groundbreaking research and claim top honors along with cash prizes!
+              </p>
 
-            <small> Registration is compulsory. No fee required. </small>
+              <div class="prize-categories">
+                <div class="prize-card">
+                  <span class="prize-rank">Top 3</span>
+                  <span class="prize-label"><i class="fas fa-microphone-alt"></i> Oral Presentations</span>
+                </div>
+                <div class="prize-card">
+                  <span class="prize-rank">Top 3</span>
+                  <span class="prize-label"><i class="fas fa-image"></i> Poster Presentations</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

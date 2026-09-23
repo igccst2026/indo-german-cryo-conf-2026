@@ -394,6 +394,89 @@ img {
     transform: translateY(-2px);
 }
 
+/* Dropdown Base */
+.nav-dropdown {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.nav-dropdown .dropdown-toggle {
+    background: transparent;
+    border: none;
+    color: inherit;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 0;
+}
+
+.nav-dropdown .dropdown-toggle i {
+    font-size: 10px;
+    transition: transform 0.2s ease;
+}
+
+/* Dropdown Menu Box */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    background: #0b3048;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-md, 8px);
+    padding: 8px 0;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1000;
+}
+
+/* Links inside Dropdown */
+.dropdown-menu a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    color: #e2f1f7;
+    font-size: 13px;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+    background: rgba(53, 185, 233, 0.15);
+    color: #75d3ef;
+}
+
+/* Specific Highlight for Prize Money */
+.dropdown-menu a.highlight-link {
+    color: #ffd700;
+    font-weight: 700;
+}
+
+.dropdown-menu a.highlight-link:hover {
+    background: rgba(255, 215, 0, 0.12);
+    color: #ffe600;
+}
+
+/* Reveal on Hover */
+.nav-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.nav-dropdown:hover .dropdown-toggle i {
+    transform: rotate(180deg);
+}
+
 .menu-toggle {
     display: none;
     width: 44px;
@@ -631,12 +714,19 @@ img {
 
 /* Container Layout */
 .hero-meta {
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 2 equal columns */
+    gap: 20px 24px;                        /* Row and column spacing */
+    align-items: start;
+    padding: 20px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.15);
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 10px 0;
+    /* padding: 10px 0; */
     margin-top: 20px;
+}
+
+.hero-meta .meta-divider {
+    display: none;
 }
 
 /* Individual Column Styling */
@@ -667,7 +757,7 @@ img {
 
 /* --- COLUMN 1: DATE --- */
 .event-date .meta-number {
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: 800;
     line-height: 1;
     letter-spacing: -0.5px;
@@ -724,6 +814,24 @@ img {
     line-height: 1.35;
     opacity: 0.75;
     margin-top: 6px;
+}
+
+/* --- COLUMN 4: PRIZE --- */
+.event-prizes .prize-title {
+    color: #d97706; /* Gold/Amber highlight tone */
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.25;
+    display: block;
+    margin-top: 2px;
+}
+
+.event-prizes .prize-sub {
+    font-size: 12px;
+    font-weight: 600;
+    opacity: 0.75;
+    margin-top: 4px;
+    display: block;
 }
 
 .hero-scroll {
@@ -1542,74 +1650,106 @@ img {
 }
 
 /* =========================================================
-   REGISTRATION CTA
+   STANDALONE REGISTRATION & PRIZE MONEY SECTION
 ========================================================= */
 
 .registration-section {
     position: relative;
-    padding: 100px 0;
-    color: white;
-
-    background:
-        radial-gradient(circle at 80% 50%, rgba(53, 185, 233, .22), transparent 30%),
-        linear-gradient(135deg, #061522, #0b3048);
-
+    padding: 90px 0;
+    color: #ffffff;
+    background: #061522;
+    background: radial-gradient(circle at 80% 50%, rgba(53, 185, 233, .18), transparent 40%), linear-gradient(135deg, #061522, #0b3048);
     overflow: hidden;
+    width: 100%;
 }
 
 .registration-pattern {
     position: absolute;
     inset: 0;
     opacity: .08;
-
     background-image:
         linear-gradient(rgba(255, 255, 255, .45) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, .45) 1px, transparent 1px);
-
     background-size: 60px 60px;
-    mask-image: linear-gradient(90deg, transparent, black 40%, black);
-    -webkit-mask-image: linear-gradient(90deg, transparent, black 40%, black);
+    mask-image: linear-gradient(180deg, transparent, black 20%, black 80%, transparent);
+    -webkit-mask-image: linear-gradient(180deg, transparent, black 20%, black 80%, transparent);
 }
 
 .registration-inner {
     position: relative;
     z-index: 2;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 70px;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.registration-copy {
+/* Header Text */
+.registration-header {
     max-width: 700px;
 }
 
-.registration-copy h2 {
-    margin: 0;
-    font-family: "Manrope", sans-serif;
-    font-size: clamp(42px, 5vw, 68px);
-    line-height: .98;
-    letter-spacing: -.06em;
+.registration-header .eyebrow {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #75d3ef;
+    text-transform: uppercase;
 }
 
-.registration-copy h2 span {
-    display: block;
+.registration-header h2 {
+    margin: 10px 0 0;
+    font-family: sans-serif;
+    font-size: clamp(32px, 4.5vw, 52px);
+    line-height: 1.1;
+    color: #ffffff;
+}
+
+.registration-header h2 span {
     color: #75d3ef;
 }
 
-.registration-copy p {
-    max-width: 550px;
-    margin: 23px 0 0;
+/* Grid Layout */
+.registration-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: stretch;
+}
+
+/* Left Card */
+.registration-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.registration-card h3 {
+    margin: 0 0 10px;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.registration-card p {
+    margin: 0;
     color: #a8c0cc;
-    font-size: 16px;
+    font-size: 15px;
+    line-height: 1.6;
 }
 
 .registration-action {
-    min-width: 250px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
+    gap: 14px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .free-badge {
@@ -1619,28 +1759,103 @@ img {
 }
 
 .free-badge strong {
-    color: white;
-    font-family: "Manrope", sans-serif;
-    font-size: 30px;
+    color: #ffffff;
+    font-size: 28px;
     line-height: 1;
-    letter-spacing: -.05em;
 }
 
 .free-badge span {
     color: #76cce5;
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 800;
     letter-spacing: 1.5px;
 }
 
-.button-large {
-    width: 100%;
-    min-height: 56px;
+/* Right Card */
+.prize-highlight-box {
+    background: rgba(255, 215, 0, 0.03);
+    border: 1px solid rgba(255, 215, 0, 0.35);
+    border-radius: 12px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
 }
 
-.registration-action small {
-    color: #8ca7b4;
+.prize-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 215, 0, 0.12);
+    color: #76cce5;
     font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    width: fit-content;
+}
+
+.prize-highlight-box h3 {
+    margin: 8px 0 6px;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.prize-tagline {
+    font-size: 14px;
+    color: #d1e4ed;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.prize-categories {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: auto;
+}
+
+.prize-card {
+    background: rgba(6, 21, 34, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 14px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.prize-rank {
+    font-size: 16px;
+    font-weight: 800;
+    color: #76cce5;
+}
+
+.prize-label {
+    font-size: 12px;
+    color: #e2f1f7;
+    font-weight: 600;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 992px) {
+    .registration-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .registration-action {
+        width: 100%;
+        max-width: 340px;
+    }
+}
+
+.reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
 }
 
 
@@ -2302,10 +2517,10 @@ img {
         width: min(calc(100% - 40px), var(--container));
     }
 
-    .desktop-nav {
+    /* .desktop-nav {
         font-size: 12px;
-        gap: 10px;
-    }
+        gap: 20px;
+    } */
 
     .institution-label {
         display: none;
@@ -2450,6 +2665,11 @@ img {
 
     .hero-scroll {
         display: none;
+    }
+
+    .hero-meta {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
     }
 
     .section-intro {
@@ -2820,9 +3040,8 @@ img {
   }
 
   .hero-meta {
-    flex-direction: column !important;
-    align-items: stretch !important;
-    padding: 10px 0 !important;
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .hero-meta-col {
