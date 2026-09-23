@@ -659,8 +659,17 @@ img {
 
 .hero-actions {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 14px;
+    gap: 20px;
+    margin-top: 32px;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
 .button {
@@ -710,6 +719,63 @@ img {
     transform: translateY(-3px);
     border-color: rgba(255, 255, 255, .75);
     background: rgba(255, 255, 255, .10);
+}
+
+.hero-prize-card {
+    background: rgba(251, 191, 36, 0.08); /* Warm gold background tint */
+    border: 1px solid rgba(251, 191, 36, 0.25);
+    border-radius: 12px;
+    padding: 10px 16px;
+    transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    max-width: 420px;
+}
+
+.hero-prize-card:hover {
+    background: rgba(251, 191, 36, 0.15);
+    border-color: rgba(251, 191, 36, 0.5);
+    transform: translateY(-2px);
+}
+
+.hero-prize-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.hero-prize-badge {
+    background: #fbbf24;
+    color: #0f172a;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.hero-prize-text {
+    color: #fef08a; /* High contrast bright gold-yellow */
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+/* Responsive Behavior: Full width on mobile screens */
+@media (max-width: 768px) {
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-buttons {
+        width: 100%;
+    }
+
+    .hero-prize-card {
+        max-width: 100%;
+        width: 100%;
+    }
 }
 
 /* Container Layout */
@@ -818,7 +884,7 @@ img {
 
 /* --- COLUMN 4: PRIZE --- */
 .event-prizes .prize-title {
-    color: #d97706; /* Gold/Amber highlight tone */
+    /* color: #d97706; */
     font-size: 16px;
     font-weight: 800;
     line-height: 1.25;
@@ -1783,61 +1849,64 @@ img {
     gap: 20px;
 }
 
-.prize-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: rgba(255, 215, 0, 0.12);
-    color: #76cce5;
-    font-size: 11px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    padding: 5px 12px;
-    border-radius: 20px;
-    width: fit-content;
-}
-
 .prize-highlight-box h3 {
-    margin: 8px 0 6px;
-    font-size: 24px;
+    font-size: 22px;
+    font-weight: 800;
+    margin: 12px 0;
     color: #ffffff;
-}
-
-.prize-tagline {
-    font-size: 14px;
-    color: #d1e4ed;
-    margin: 0;
-    line-height: 1.5;
+    line-height: 1.3;
 }
 
 .prize-categories {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-top: auto;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 20px;
 }
 
 .prize-card {
-    background: rgba(6, 21, 34, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 14px;
-    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    padding: 14px 16px;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 8px;
+}
+
+.prize-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .prize-rank {
-    font-size: 16px;
+    font-size: 11px;
     font-weight: 800;
-    color: #76cce5;
+    text-transform: uppercase;
+    color: #38bdf8; /* Bright Cyan */
+    letter-spacing: 0.5px;
+}
+
+.prize-cash {
+    font-size: 11px;
+    font-weight: 700;
+    color: #fbbf24; /* Vibrant Gold */
 }
 
 .prize-label {
-    font-size: 12px;
-    color: #e2f1f7;
+    font-size: 14px;
     font-weight: 600;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+@media (max-width: 520px) {
+    .prize-categories {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Mobile Adjustments */
