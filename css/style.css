@@ -781,14 +781,14 @@ img {
 /* Container Layout */
 .hero-meta {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 2 equal columns */
+    grid-template-columns: repeat(3, 1fr); /* 2 equal columns */
     gap: 20px 24px;                        /* Row and column spacing */
     align-items: start;
     padding: 20px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    /* border-top: 1px solid rgba(255, 255, 255, 0.15); */
+    /* border-bottom: 1px solid rgba(255, 255, 255, 0.15); */
     /* padding: 10px 0; */
-    margin-top: 20px;
+    margin-top: 50px;
 }
 
 .hero-meta .meta-divider {
@@ -800,9 +800,25 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 16px 28px;
-    flex: 1; /* Gives all 3 columns equal width */
+    
+    /* Makes the box small and centered */
+    width: 100%;
+    max-width: 420px; 
+    margin: 0 auto; 
+    
+    /* Padding and spacing inside the box */
+    padding: 24px 32px;
+    box-sizing: border-box;
+    
+    /* Dark blue/teal gradient and border styling from the image */
+    background: radial-gradient(circle at center, #0f2235 0%, #07111c 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    
+    /* Adds a subtle outer shadow for depth */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); 
 }
+
 
 /* Vertical Dividers */
 .meta-divider {
@@ -883,8 +899,7 @@ img {
 }
 
 /* --- COLUMN 4: PRIZE --- */
-.event-prizes .prize-title {
-    /* color: #d97706; */
+/* .event-prizes .prize-title {
     font-size: 16px;
     font-weight: 800;
     line-height: 1.25;
@@ -898,7 +913,7 @@ img {
     opacity: 0.75;
     margin-top: 4px;
     display: block;
-}
+} */
 
 .hero-scroll {
     position: absolute;
@@ -1589,6 +1604,7 @@ img {
 
 /* Card container */
 .committee-card {
+    max-height: 160px;
     background: #ffffff;
     border: 1px solid #e2e8f0;
     border-radius: 12px;
@@ -1690,13 +1706,17 @@ img {
    Responsive Adaptations
 ========================================================= */
 
-@media (max-width: 1024px) {
+@media (max-width: 770px) {
     .committee-grid {
-        grid-template-columns: 1fr; /* Switch to 1 column on smaller tablets */
+        grid-template-columns: 2fr; /* Switch to 1 column on smaller tablets */
     }
 }
 
 @media (max-width: 520px) {
+    .committee-grid {
+        justify-items: center;
+    }
+
     .committee-card-body {
         flex-direction: column; /* Stack vertically on small mobile screens */
     }
@@ -1704,7 +1724,25 @@ img {
     .committee-photo-wrap {
         width: 100%;
         min-width: 100%;
-        height: 220px;
+        height: 400px;
+    }
+
+    .committee-card {
+        max-height: max-content;
+        width: 75%;
+    }
+}
+
+@media (max-width: 350px) {
+
+    .committee-photo-wrap {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    .committee-card {
+        max-height: max-content;
+        width: 100%;
     }
 }
 
