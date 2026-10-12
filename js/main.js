@@ -295,7 +295,10 @@ document.addEventListener("DOMContentLoaded", () => {
         ".sponsorship-copy, " +
         ".sponsorship-action, " +
         ".venue-copy, " +
-        ".map-frame"
+        ".map-frame" + 
+        ".gallery-item" + 
+        ".gallery-more-card" +
+        ".schedule-item"
     );
 
     if ("IntersectionObserver" in window && revealElements.length) {
@@ -385,3 +388,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+/* =====================================================
+   EVENT SCHEDULE TAB SWITCHER ENGINE
+===================================================== */
+function switchScheduleDay(event, dayId) {
+    // 1. Fetch all system component targets
+    const panels = document.querySelectorAll('.schedule-day-panel');
+    const tabButtons = document.querySelectorAll('.schedule-tab-btn');
+
+    // 2. Clear out active classes down the structural line
+    panels.forEach(panel => panel.classList.remove('active'));
+    tabButtons.forEach(btn => btn.classList.remove('active'));
+
+    // 3. Inject active tokens safely into user selected elements
+    document.getElementById(dayId).classList.add('active');
+    event.currentTarget.classList.add('active');
+}

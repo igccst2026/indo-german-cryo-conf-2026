@@ -1753,6 +1753,592 @@ img {
     visibility: visible !important;
 }
 
+
+/* =========================================================
+   EVENT SCHEDULE & INTERACTIVE TIMELINE SYSTEM
+========================================================= */
+
+.schedule-section {
+    background: var(--paper);
+}
+
+/* Day Selector Navigation Tabs Layout */
+.schedule-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 50px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 16px;
+}
+
+.schedule-tab-btn {
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 12px 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    min-width: 160px;
+    transition: all 0.3s var(--ease);
+}
+
+.schedule-tab-btn .tab-day {
+    color: var(--ink);
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.schedule-tab-btn .tab-date {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+/* Active State Design Tokens */
+.schedule-tab-btn:hover {
+    border-color: #b7dce9;
+    background: var(--white);
+    transform: translateY(-2px);
+}
+
+.schedule-tab-btn.active {
+    background: var(--navy);
+    border-color: var(--navy);
+    box-shadow: var(--shadow-sm);
+}
+
+.schedule-tab-btn.active .tab-day { color: var(--white); }
+.schedule-tab-btn.active .tab-date { color: var(--cyan); }
+
+/* Day Content Visibility Panels */
+.schedule-day-panel {
+    display: none;
+    max-width: 900px;
+    margin-inline: auto;
+}
+
+.schedule-day-panel.active {
+    display: block;
+}
+
+/* Timeline Row Layout Tracks */
+.schedule-item {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 40px;
+    padding-block: 28px;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+}
+
+.schedule-item:last-child {
+    border-bottom: none;
+}
+
+/* Pure CSS Timeline Vertical Indicator Ribbon Node */
+.schedule-item::before {
+    content: "";
+    position: absolute;
+    left: 240px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--line);
+    transform: translateX(-1px);
+}
+
+.schedule-time {
+    color: var(--ink);
+    font-family: "Manrope", sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: -0.2px;
+    padding-top: 4px;
+}
+
+.schedule-content {
+    padding-left: 20px;
+    position: relative;
+}
+
+/* Circular Timeline Connector Junction Pin Node */
+.schedule-content::before {
+    content: "";
+    position: absolute;
+    left: -24px;
+    top: 12px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 2px solid var(--blue);
+    z-index: 2;
+    transition: background 0.3s ease;
+}
+
+.schedule-item:hover .schedule-content::before {
+    background: var(--cyan);
+}
+
+/* Contextual Category Badge Tags */
+.schedule-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.badge-admin { background: #e2e8f0; color: #475569; }
+.badge-keynote { background: #e0f2fe; color: #0369a1; }
+.badge-track { background: #eef2ff; color: #4338ca; }
+.badge-break { background: #fef3c7; color: #d97706; }
+
+.schedule-content h3 {
+    margin: 0 0 6px;
+    color: var(--ink);
+    font-family: "Manrope", sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.schedule-content p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* =========================================================
+   SCHEDULE RESPONSIVE BREAKPOINT ADAPTATIONS
+========================================================= */
+
+@media (max-width: 768px) {
+    .schedule-tabs {
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding-bottom: 12px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .schedule-tab-btn {
+        flex-shrink: 0;
+        padding: 10px 20px;
+        min-width: 130px;
+    }
+
+    .schedule-item {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding-block: 22px;
+    }
+
+    .schedule-item::before {
+        display: none; /* Strip central line grids on touch sizes */
+    }
+
+    .schedule-content {
+        padding-left: 0;
+    }
+
+    .schedule-content::before {
+        display: none;
+    }
+
+    .schedule-time {
+        color: var(--blue);
+        font-size: 14px;
+    }
+}
+
+
+/* =========================================================
+   GALLERY SECTION
+========================================================= */
+
+.gallery-section {
+    background: var(--white);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.gallery-item {
+    position: relative;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--paper);
+    
+    transition:
+        transform .35s var(--ease),
+        box-shadow .35s var(--ease),
+        border-color .35s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-6px);
+    border-color: #b7dce9;
+    box-shadow: var(--shadow-md);
+}
+
+/* Feature Wide Image Rules */
+.gallery-item.item-featured {
+    grid-column: span 2;
+}
+
+.gallery-image-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 260px;
+}
+
+.gallery-item.item-featured .gallery-image-wrap {
+    min-height: 340px;
+}
+
+.gallery-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .6s var(--ease);
+}
+
+.gallery-item:hover .gallery-image-wrap img {
+    transform: scale(1.04);
+}
+
+/* Elegant Text Overlay */
+.gallery-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 24px;
+    background: linear-gradient(to top, rgba(4, 19, 30, 0.85) 0%, rgba(4, 19, 30, 0.3) 50%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    z-index: 2;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-tag {
+    color: var(--cyan);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.gallery-overlay h3 {
+    margin: 0;
+    color: var(--white);
+    font-family: "Manrope", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+}
+
+/* =========================================================
+   GALLERY INTERFACE SYSTEM (PREVIEW + LINK)
+========================================================= */
+
+.gallery-section {
+    background: var(--white);
+}
+
+.gallery-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.gallery-item {
+    position: relative;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--paper);
+    aspect-ratio: 1 / 1; /* Perfect uniform square cards */
+    
+    transition:
+        transform .35s var(--ease),
+        box-shadow .35s var(--ease),
+        border-color .35s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-6px);
+    border-color: #b7dce9;
+    box-shadow: var(--shadow-md);
+}
+
+.gallery-image-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.gallery-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .6s var(--ease);
+}
+
+.gallery-item:hover .gallery-image-wrap img {
+    transform: scale(1.05);
+}
+
+/* Overlay Visual Layer */
+.gallery-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(4, 19, 30, 0.9) 0%, rgba(4, 19, 30, 0.3) 60%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    z-index: 2;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-tag {
+    color: var(--cyan);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.gallery-overlay h3 {
+    margin: 0;
+    color: var(--white);
+    font-family: "Manrope", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+/* =========================================================
+   "VIEW MORE GALLERY" DYNAMIC LINK CARD
+========================================================= */
+
+.gallery-more-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+    padding: 24px;
+    background: radial-gradient(circle at 100% 0%, rgba(53, 185, 233, 0.08), transparent 50%), var(--navy);
+    border: 1px solid var(--line-dark);
+    text-decoration: none !important;
+    
+    transition:
+        transform .35s var(--ease),
+        border-color .35s ease,
+        box-shadow .35s var(--ease);
+}
+
+.gallery-more-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(53, 185, 233, 0.4);
+    box-shadow: var(--shadow-md);
+}
+
+.more-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+/* Pure CSS Layered Stack Action Icon */
+.more-icon-wrapper {
+    position: relative;
+    width: 52px;
+    height: 52px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.more-icon-wrapper .icon-layer-dot {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: rgba(53, 185, 233, 0.4);
+    border-radius: 50%;
+    transition: all 0.35s var(--ease);
+}
+
+/* Arrange dots into an elegant clustered icon array */
+.more-icon-wrapper .icon-layer-dot:nth-child(1) { top: 16px; left: 16px; }
+.more-icon-wrapper .icon-layer-dot:nth-child(2) { bottom: 16px; left: 16px; }
+.more-icon-wrapper .icon-layer-dot:nth-child(3) { top: 16px; right: 16px; }
+
+.more-icon-wrapper .icon-arrow {
+    position: static;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    background: transparent;
+    color: var(--cyan);
+    font-size: 18px;
+    font-weight: 700;
+    transform: translate(-1px, -1px);
+}
+
+/* Interactive hover shifts on the vector items */
+.gallery-more-card:hover .more-icon-wrapper {
+    background: var(--blue);
+    border-color: var(--blue);
+}
+
+.gallery-more-card:hover .icon-layer-dot {
+    background: transparent;
+    opacity: 0;
+}
+
+.gallery-more-card:hover .icon-arrow {
+    color: var(--white);
+    opacity: 1;
+    transform: translateX(3px);
+}
+
+.more-text-group h3 {
+    margin: 0 0 4px;
+    color: var(--white);
+    font-family: "Manrope", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.more-text-group p {
+    margin: 0;
+    color: var(--muted-light);
+    font-size: 12px;
+}
+
+/* =========================================================
+   ADAPTIVE RESPONSIVE COMPRESSION CONTROLS
+========================================================= */
+
+@media (max-width: 1100px) {
+    .gallery-preview-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 520px) {
+    .gallery-preview-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .gallery-overlay {
+        opacity: 1; /* Persistent fallback viewing on touch displays */
+        padding: 16px;
+    }
+
+    .gallery-item, .gallery-more-card {
+        aspect-ratio: 4 / 3; /* Elegant landscape compression constraints */
+    }
+}
+
+/* =========================================================
+   SCHEDULE HEADER DOWNLOAD ACTION LAYOUT CONTROLS
+========================================================= */
+
+/* Update the default wide intro wrapper layout row */
+.section-intro-wide {
+    display: grid;
+    grid-template-columns: 170px 1fr auto; /* Added "auto" track to house the button cleanly */
+    align-items: center; /* Vertically centers the button with the heading content */
+    gap: 45px;
+}
+
+.schedule-download-action {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+/* Force consistency to keep the button fully visible on touch displays */
+.schedule-download-action .nav-cta {
+    padding: 14px 24px;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap; /* Prevents the text from breaking into two lines */
+}
+
+/* =========================================================
+   RESPONSIVE LAYOUT CONSTRAINTS OVERRIDES
+========================================================= */
+
+@media (max-width: 992px) {
+    .section-intro-wide {
+        grid-template-columns: 1fr; /* Stack into a clean single column matrix */
+        gap: 20px;
+        align-items: flex-start;
+    }
+    
+    .schedule-download-action {
+        width: 100%;
+        margin-top: 8px;
+    }
+
+    .schedule-download-action .nav-cta {
+        width: 100%; /* Spans full width dynamically for easier thumb-tapping */
+        justify-content: center;
+    }
+}
+
+@media (max-width: 520px) {
+    .section-intro-wide {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+
+
+
 /* =========================================================
    STANDALONE REGISTRATION & PRIZE MONEY SECTION
 ========================================================= */
