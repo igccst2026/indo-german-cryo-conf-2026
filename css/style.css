@@ -722,7 +722,8 @@ img {
 }
 
 .hero-prize-card {
-    background: rgba(251, 191, 36, 0.08); /* Warm gold background tint */
+    background: rgba(251, 191, 36, 0.08);
+    /* Warm gold background tint */
     border: 1px solid rgba(251, 191, 36, 0.25);
     border-radius: 12px;
     padding: 10px 16px;
@@ -755,7 +756,8 @@ img {
 }
 
 .hero-prize-text {
-    color: #fef08a; /* High contrast bright gold-yellow */
+    color: #fef08a;
+    /* High contrast bright gold-yellow */
     font-size: 13px;
     font-weight: 600;
     line-height: 1.35;
@@ -781,8 +783,10 @@ img {
 /* Container Layout */
 .hero-meta {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 2 equal columns */
-    gap: 20px 24px;                        /* Row and column spacing */
+    grid-template-columns: repeat(3, 1fr);
+    /* 2 equal columns */
+    gap: 20px 24px;
+    /* Row and column spacing */
     align-items: start;
     padding: 20px 0;
     /* border-top: 1px solid rgba(255, 255, 255, 0.15); */
@@ -800,23 +804,23 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
+
     /* Makes the box small and centered */
     width: 100%;
-    max-width: 420px; 
-    margin: 0 auto; 
-    
+    max-width: 420px;
+    margin: 0 auto;
+
     /* Padding and spacing inside the box */
     padding: 24px 32px;
     box-sizing: border-box;
-    
+
     /* Dark blue/teal gradient and border styling from the image */
     background: radial-gradient(circle at center, #0f2235 0%, #07111c 100%);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
-    
+
     /* Adds a subtle outer shadow for depth */
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); 
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -833,7 +837,8 @@ img {
     letter-spacing: 2px;
     text-transform: uppercase;
     font-weight: 700;
-    color: #64748b; /* Subtle label color */
+    color: #64748b;
+    /* Subtle label color */
     margin-bottom: 6px;
 }
 
@@ -885,7 +890,8 @@ img {
 .event-notice .notice-free {
     font-size: 1.5rem;
     font-weight: 900;
-    color: #10b981; /* Accent green for FREE badge */
+    color: #10b981;
+    /* Accent green for FREE badge */
     line-height: 1;
     letter-spacing: 0.5px;
     padding: 8px 0;
@@ -1478,7 +1484,8 @@ img {
 
 /* Card Styling */
 .speaker-card {
-    width: 100%; /* Spans full width of its grid column */
+    width: 100%;
+    /* Spans full width of its grid column */
     background: white;
     border: 1px solid var(--line);
     border-radius: 12px;
@@ -1656,7 +1663,8 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start; /* Keeps badge inline rather than stretched */
+    align-items: flex-start;
+    /* Keeps badge inline rather than stretched */
     flex: 1;
 }
 
@@ -1664,7 +1672,8 @@ img {
 .committee-badge {
     display: inline-flex;
     align-items: center;
-    width: auto !important; /* Overrides block/stretched behavior */
+    width: auto !important;
+    /* Overrides block/stretched behavior */
     padding: 4px 10px;
     background-color: #0284c7;
     color: #ffffff;
@@ -1694,7 +1703,7 @@ img {
     line-height: 1.2;
 }
 
-.committee-dept, 
+.committee-dept,
 .committee-inst {
     color: #64748b;
     font-size: 12.5px;
@@ -1708,7 +1717,8 @@ img {
 
 @media (max-width: 770px) {
     .committee-grid {
-        grid-template-columns: 2fr; /* Switch to 1 column on smaller tablets */
+        grid-template-columns: 2fr;
+        /* Switch to 1 column on smaller tablets */
     }
 }
 
@@ -1718,7 +1728,8 @@ img {
     }
 
     .committee-card-body {
-        flex-direction: column; /* Stack vertically on small mobile screens */
+        flex-direction: column;
+        /* Stack vertically on small mobile screens */
     }
 
     .committee-photo-wrap {
@@ -1811,8 +1822,13 @@ img {
     box-shadow: var(--shadow-sm);
 }
 
-.schedule-tab-btn.active .tab-day { color: var(--white); }
-.schedule-tab-btn.active .tab-date { color: var(--cyan); }
+.schedule-tab-btn.active .tab-day {
+    color: var(--white);
+}
+
+.schedule-tab-btn.active .tab-date {
+    color: var(--cyan);
+}
 
 /* Day Content Visibility Panels */
 .schedule-day-panel {
@@ -1896,10 +1912,25 @@ img {
     margin-bottom: 10px;
 }
 
-.badge-admin { background: #e2e8f0; color: #475569; }
-.badge-keynote { background: #e0f2fe; color: #0369a1; }
-.badge-track { background: #eef2ff; color: #4338ca; }
-.badge-break { background: #fef3c7; color: #d97706; }
+.badge-admin {
+    background: #e2e8f0;
+    color: #475569;
+}
+
+.badge-keynote {
+    background: #e0f2fe;
+    color: #0369a1;
+}
+
+.badge-track {
+    background: #eef2ff;
+    color: #4338ca;
+}
+
+.badge-break {
+    background: #fef3c7;
+    color: #d97706;
+}
 
 .schedule-content h3 {
     margin: 0 0 6px;
@@ -1942,7 +1973,8 @@ img {
     }
 
     .schedule-item::before {
-        display: none; /* Strip central line grids on touch sizes */
+        display: none;
+        /* Strip central line grids on touch sizes */
     }
 
     .schedule-content {
@@ -1981,7 +2013,7 @@ img {
     border-radius: 12px;
     overflow: hidden;
     background: var(--paper);
-    
+
     transition:
         transform .35s var(--ease),
         box-shadow .35s var(--ease),
@@ -2080,8 +2112,9 @@ img {
     border-radius: 12px;
     overflow: hidden;
     background: var(--paper);
-    aspect-ratio: 1 / 1; /* Perfect uniform square cards */
-    
+    aspect-ratio: 1 / 1;
+    /* Perfect uniform square cards */
+
     transition:
         transform .35s var(--ease),
         box-shadow .35s var(--ease),
@@ -2163,7 +2196,7 @@ img {
     background: radial-gradient(circle at 100% 0%, rgba(53, 185, 233, 0.08), transparent 50%), var(--navy);
     border: 1px solid var(--line-dark);
     text-decoration: none !important;
-    
+
     transition:
         transform .35s var(--ease),
         border-color .35s ease,
@@ -2207,9 +2240,20 @@ img {
 }
 
 /* Arrange dots into an elegant clustered icon array */
-.more-icon-wrapper .icon-layer-dot:nth-child(1) { top: 16px; left: 16px; }
-.more-icon-wrapper .icon-layer-dot:nth-child(2) { bottom: 16px; left: 16px; }
-.more-icon-wrapper .icon-layer-dot:nth-child(3) { top: 16px; right: 16px; }
+.more-icon-wrapper .icon-layer-dot:nth-child(1) {
+    top: 16px;
+    left: 16px;
+}
+
+.more-icon-wrapper .icon-layer-dot:nth-child(2) {
+    bottom: 16px;
+    left: 16px;
+}
+
+.more-icon-wrapper .icon-layer-dot:nth-child(3) {
+    top: 16px;
+    right: 16px;
+}
 
 .more-icon-wrapper .icon-arrow {
     position: static;
@@ -2271,14 +2315,17 @@ img {
         grid-template-columns: 1fr;
         gap: 16px;
     }
-    
+
     .gallery-overlay {
-        opacity: 1; /* Persistent fallback viewing on touch displays */
+        opacity: 1;
+        /* Persistent fallback viewing on touch displays */
         padding: 16px;
     }
 
-    .gallery-item, .gallery-more-card {
-        aspect-ratio: 4 / 3; /* Elegant landscape compression constraints */
+    .gallery-item,
+    .gallery-more-card {
+        aspect-ratio: 4 / 3;
+        /* Elegant landscape compression constraints */
     }
 }
 
@@ -2289,8 +2336,10 @@ img {
 /* Update the default wide intro wrapper layout row */
 .section-intro-wide {
     display: grid;
-    grid-template-columns: 170px 1fr auto; /* Added "auto" track to house the button cleanly */
-    align-items: center; /* Vertically centers the button with the heading content */
+    grid-template-columns: 170px 1fr auto;
+    /* Added "auto" track to house the button cleanly */
+    align-items: center;
+    /* Vertically centers the button with the heading content */
     gap: 45px;
 }
 
@@ -2305,7 +2354,8 @@ img {
     padding: 14px 24px;
     font-size: 14px;
     font-weight: 700;
-    white-space: nowrap; /* Prevents the text from breaking into two lines */
+    white-space: nowrap;
+    /* Prevents the text from breaking into two lines */
 }
 
 /* =========================================================
@@ -2314,18 +2364,20 @@ img {
 
 @media (max-width: 992px) {
     .section-intro-wide {
-        grid-template-columns: 1fr; /* Stack into a clean single column matrix */
+        grid-template-columns: 1fr;
+        /* Stack into a clean single column matrix */
         gap: 20px;
         align-items: flex-start;
     }
-    
+
     .schedule-download-action {
         width: 100%;
         margin-top: 8px;
     }
 
     .schedule-download-action .nav-cta {
-        width: 100%; /* Spans full width dynamically for easier thumb-tapping */
+        width: 100%;
+        /* Spans full width dynamically for easier thumb-tapping */
         justify-content: center;
     }
 }
@@ -2508,14 +2560,16 @@ img {
     font-size: 11px;
     font-weight: 800;
     text-transform: uppercase;
-    color: #38bdf8; /* Bright Cyan */
+    color: #38bdf8;
+    /* Bright Cyan */
     letter-spacing: 0.5px;
 }
 
 .prize-cash {
     font-size: 11px;
     font-weight: 700;
-    color: #fbbf24; /* Vibrant Gold */
+    color: #fbbf24;
+    /* Vibrant Gold */
 }
 
 .prize-label {
@@ -2787,7 +2841,8 @@ img {
     background: #ffffff;
     border: 1px solid var(--line);
     border-radius: 12px;
-    overflow: hidden; /* Ensures image corners match card radius */
+    overflow: hidden;
+    /* Ensures image corners match card radius */
     display: flex;
     flex-direction: column;
     opacity: 1 !important;
@@ -3039,7 +3094,8 @@ img {
     margin: 0 0 10px;
 }
 
-.contact-card p, .contact-card a {
+.contact-card p,
+.contact-card a {
     color: var(--muted);
     font-size: 13px;
     line-height: 1.6;
@@ -3052,7 +3108,9 @@ img {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    .committee-grid, .contact-grid {
+
+    .committee-grid,
+    .contact-grid {
         grid-template-columns: 1fr;
     }
 }
@@ -3690,83 +3748,84 @@ img {
 ========================================================= */
 
 @media (max-width: 450px) {
-  /* 1. Prevent Top Institutional Bar Overflow */
-  .institution-bar {
-    height: auto !important;
-    padding: 6px 0;
-  }
 
-  .institution-inner {
-    gap: 10px;
-  }
+    /* 1. Prevent Top Institutional Bar Overflow */
+    .institution-bar {
+        height: auto !important;
+        padding: 6px 0;
+    }
 
-  .institution-logos {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 6px;
-  }
+    .institution-inner {
+        gap: 10px;
+    }
 
-  .institution-logos a {
-    padding: 3px 6px;
-  }
+    .institution-logos {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px;
+    }
 
-  .institution-logos img,
-  .institution-logos svg {
-    height: 20px;
-    max-width: 50px;
-    min-width: 14px;
-  }
+    .institution-logos a {
+        padding: 3px 6px;
+    }
 
-  /* 2. Fix Hero Heading & Meta Grid Clipping */
-  .hero-inner {
-    padding-top: 30px;
-    padding-bottom: 40px;
-  }
+    .institution-logos img,
+    .institution-logos svg {
+        height: 20px;
+        max-width: 50px;
+        min-width: 14px;
+    }
 
-  .hero h1 {
-    font-size: clamp(34px, 10vw, 48px) !important;
-    word-break: break-word;
-  }
+    /* 2. Fix Hero Heading & Meta Grid Clipping */
+    .hero-inner {
+        padding-top: 30px;
+        padding-bottom: 40px;
+    }
 
-  .hero-title-pre {
-    font-size: 18px !important;
-  }
+    .hero h1 {
+        font-size: clamp(34px, 10vw, 48px) !important;
+        word-break: break-word;
+    }
 
-  .hero-meta {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
+    .hero-title-pre {
+        font-size: 18px !important;
+    }
 
-  .hero-meta-col {
-    padding: 12px 0 !important;
-    width: 100%;
-  }
+    .hero-meta {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
 
-  .meta-divider {
-    width: 100% !important;
-    height: 1px !important;
-  }
+    .hero-meta-col {
+        padding: 12px 0 !important;
+        width: 100%;
+    }
 
-  /* 3. Fix Timeline Alignment */
-  .timeline-item {
-    grid-template-columns: 36px 70px 1fr !important;
-    gap: 8px;
-  }
+    .meta-divider {
+        width: 100% !important;
+        height: 1px !important;
+    }
 
-  .timeline-date span {
-    font-size: 26px !important;
-  }
+    /* 3. Fix Timeline Alignment */
+    .timeline-item {
+        grid-template-columns: 36px 70px 1fr !important;
+        gap: 8px;
+    }
 
-  /* 4. Fix Speaker & Committee Card Overflow */
-  .speaker-card {
-    width: 100% !important;
-    flex-basis: 100% !important;
-  }
+    .timeline-date span {
+        font-size: 26px !important;
+    }
 
-  /* 5. Fix Accommodation Features Padding */
-  .accommodation-card {
-    padding: 20px 16px !important;
-  }
+    /* 4. Fix Speaker & Committee Card Overflow */
+    .speaker-card {
+        width: 100% !important;
+        flex-basis: 100% !important;
+    }
+
+    /* 5. Fix Accommodation Features Padding */
+    .accommodation-card {
+        padding: 20px 16px !important;
+    }
 }
 
 

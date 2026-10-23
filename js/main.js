@@ -295,8 +295,8 @@ document.addEventListener("DOMContentLoaded", () => {
         ".sponsorship-copy, " +
         ".sponsorship-action, " +
         ".venue-copy, " +
-        ".map-frame" + 
-        ".gallery-item" + 
+        ".map-frame" +
+        ".gallery-item" +
         ".gallery-more-card" +
         ".schedule-item"
     );
