@@ -405,3 +405,754 @@ function switchScheduleDay(event, dayId) {
     document.getElementById(dayId).classList.add('active');
     event.currentTarget.classList.add('active');
 }
+
+/* =========================================================
+   CONFERENCE SCHEDULE DATA
+   Indo-German Conference on Cryogenics
+   09–11 November 2026
+========================================================= */
+
+const conferenceSchedule = {
+
+    /* =====================================================
+       DAY 1 — 09 NOVEMBER 2026
+    ===================================================== */
+
+    day1: [
+
+        {
+            type: "admin",
+            start: "08:00 AM",
+            end: "10:00 AM",
+            title: "Delegate Registration & Welcome Kit Collection",
+            duration: "120 mins"
+        },
+
+        {
+            type: "admin",
+            start: "10:00 AM",
+            end: "10:30 AM",
+            title: "Inaugural Programme",
+            duration: "30 mins"
+        },
+
+        {
+            type: "break",
+            start: "10:30 AM",
+            end: "11:00 AM",
+            title: "High Tea",
+            duration: "30 mins"
+        },
+
+
+        /* SESSION 1 */
+
+        {
+            type: "session",
+            title: "Session 1 – Cooling and Liquefaction Technologies",
+            chair: "Prof. T. S. Dutta"
+        },
+
+        {
+            type: "talk",
+            start: "11:00 AM",
+            end: "11:30 AM",
+            name: "Prof. Christoph Haberstroh",
+            affiliation: "Professor, Technische Universität Dresden",
+            topic: "General Aspects in Cryogenics",
+            duration: "30 mins"
+        },
+
+        {
+            type: "talk",
+            start: "11:30 AM",
+            end: "12:00 PM",
+            name: "Dr. Anindya Chakraborty",
+            affiliation: "Head, Cryo-Technology Division, Multidisciplinary Research Group, BARC",
+            topic: "Recent Advances in Cryogenic Technology Development at BARC",
+            duration: "30 mins"
+        },
+
+        {
+            type: "talk",
+            start: "12:00 PM",
+            end: "12:30 PM",
+            name: "Prof. Dirk Lindackers",
+            affiliation: "Professor, IFW Dresden – Research Technology Department",
+            topic: "Cryogenic Aspects in a Global Green Hydrogen Economy",
+            duration: "30 mins"
+        },
+
+        {
+            type: "talk",
+            start: "12:30 PM",
+            end: "01:00 PM",
+            name: "Prof. Parthasarathi Ghosh",
+            affiliation: "Professor & Head, Cryogenic Engineering Centre, IIT Kharagpur",
+            topic: "A Novel Turboexpander for Cryogenic Liquefaction Applications",
+            duration: "30 mins"
+        },
+
+        {
+            type: "break",
+            start: "01:00 PM",
+            end: "02:00 PM",
+            title: "Lunch Break",
+            duration: "60 mins"
+        },
+
+
+        /* SESSION 2 */
+
+        {
+            type: "session",
+            title: "Session 2 – Quantum Materials and Technology",
+            chair: "Prof. Prasanna Kumar Sahoo"
+        },
+
+        {
+            type: "talk",
+            start: "02:00 PM",
+            end: "02:30 PM",
+            name: "Dr. Prashant C. Upadhya",
+            affiliation: "Director, Wadhwani Innovation Network, Centre of Excellence for Quantum Technologies, IISc",
+            topic: "The Cryogenic–Quantum Interface: Enabling Next-Generation Quantum Systems",
+            duration: "30 mins"
+        },
+
+        {
+            type: "talk",
+            start: "02:30 PM",
+            end: "03:00 PM",
+            name: "Prof. Venimadhav Adyam",
+            affiliation: "Professor, IIT Kharagpur",
+            topic: "Quantum Materials for Cryogenic Applications",
+            duration: "30 mins"
+        },
+
+        {
+            type: "talk",
+            start: "03:00 PM",
+            end: "03:30 PM",
+            name: "Prof. Chiranjib Mitra",
+            affiliation: "Professor, Indian Institute of Science Education and Research Kolkata (IISER Kolkata)",
+            topic: "Pulse Schemes for Increasing Coherence Time in an Ensemble of Nitrogen Vacancy Centres in Diamond",
+            duration: "30 mins"
+        },
+
+        {
+            type: "talk",
+            start: "03:30 PM",
+            end: "04:00 PM",
+            name: "Dr. Avradeep Pal",
+            affiliation: "Assistant Professor, Department of Physics, IIT Bombay",
+            topic: "Non-volatile Josephson Memory Devices",
+            duration: "30 mins"
+        },
+
+        {
+            type: "break",
+            start: "04:00 PM",
+            end: "04:15 PM",
+            title: "Tea Break",
+            duration: "15 mins"
+        },
+
+
+        /* STUDENT PRESENTATIONS */
+
+        {
+            type: "session",
+            title: "Oral Presentations by Students and Faculty",
+            chair: ""
+        },
+
+        {
+            type: "student",
+            start: "04:15 PM",
+            end: "04:25 PM",
+            name: "Arjun Garva",
+            affiliation: "Research Scholar, IIT Kharagpur",
+            topic: "CFD Investigation of Fluid Transient-Induced Cavitation in a Cryogenic Environment",
+            duration: "10 mins"
+        },
+
+        {
+            type: "student",
+            start: "04:25 PM",
+            end: "04:35 PM",
+            name: "Jishad K.",
+            affiliation: "Research Scholar, Indian Institute of Space Science and Technology",
+            topic: "A Hybrid Mass Transfer Model for Direct Contact Condensation on Structured and Unstructured Meshes: Towards Cryogenic Applications",
+            duration: "10 mins"
+        },
+
+        {
+            type: "faculty",
+            start: "04:35 PM",
+            end: "04:45 PM",
+            name: "Dr. Kishore Singh Patel",
+            affiliation: "Assistant Professor Grade-I, Mechanical Engineering, NIT Rourkela",
+            topic: "Transient CFD Investigation of Regenerator Thermal Non-Equilibrium in a Free-Piston Stirling Cryocooler",
+            duration: "10 mins"
+        },
+
+        {
+            type: "faculty",
+            start: "04:45 PM",
+            end: "04:55 PM",
+            name: "Dr. B. Kiran Naik",
+            affiliation: "Assistant Professor Grade-I, Mechanical Engineering, NIT Rourkela",
+            topic: "Novel Magnetoresistive Heat Switch for Ultralow Temperature Refrigeration in Quantum Technologies: A Thermomagnetic Analysis",
+            duration: "10 mins"
+        },
+
+        {
+            type: "student",
+            start: "04:55 PM",
+            end: "05:05 PM",
+            name: "Ayush Kori",
+            affiliation: "Undergraduate Student, SVKM's Mithibai College",
+            topic: "Development of a Fast-Response, High-Sensitivity, Transistor-Based Temperature Sensor for Cryogenic Applications",
+            duration: "10 mins"
+        },
+
+        {
+            type: "special",
+            start: "05:05 PM",
+            end: "06:05 PM",
+            title: "Panel Discussion",
+            duration: "60 mins"
+        },
+
+        {
+            type: "special",
+            start: "07:30 PM",
+            end: "10:30 PM",
+            title: "Gala Dinner",
+            duration: "180 mins"
+        }
+
+    ],
+
+
+    /* =====================================================
+       DAY 2 — 10 NOVEMBER 2026
+    ===================================================== */
+
+    day2: [
+
+        /* SESSION 3 */
+
+        {
+            type: "session",
+            title: "Session 3 – Cryogenic Refrigeration Technology",
+            chair: "Prof. Danny Baumann"
+        },
+
+        {
+            type: "talk",
+            start: "09:30 AM",
+            end: "10:00 AM",
+            name: "Dr. Soumen Kar",
+            affiliation: "Scientist-G, Chief Investigator IMRI-IUAC; In-charge, Cryogenics & Applied Superconductivity Lab, Inter-University Accelerator Centre",
+            topic: "Challenges in Cryogenic and Superconducting Technology in Whole-Body MRI Magnets",
+            duration: "30 mins"
+        },
+
+        {
+            type: "talk",
+            start: "10:00 AM",
+            end: "10:30 AM",
+            name: "Dr. Vivek Singh",
+            affiliation: "Scientist/Engineer-SF, Thermal Engineering Division, Space Applications Centre (SAC), ISRO, Ahmedabad",
+            topic: "Adiabatic Demagnetization Refrigerators for Sub-Kelvin Applications",
+            duration: "30 mins"
+        },
+
+        {
+            type: "talk",
+            start: "10:30 AM",
+            end: "11:00 AM",
+            name: "Dipl.-Ing. Christoph Mühsig",
+            affiliation: "Engineering Manager, Scientific Vacuum Division, Leybold Dresden GmbH",
+            topic: "Cryo- and Vacuum Solutions for Emerging + Sustainable Technologies",
+            duration: "30 mins"
+        },
+
+        {
+            type: "break",
+            start: "11:00 AM",
+            end: "11:15 AM",
+            title: "Tea Break",
+            duration: "15 mins"
+        },
+
+        {
+            type: "talk",
+            start: "11:15 AM",
+            end: "11:45 AM",
+            name: "Dr. Tino Gottschall",
+            affiliation: "Dresden High Magnetic Field Laboratory, Helmholtz-Zentrum Dresden-Rossendorf, Germany, and Magnotherm Solutions GmbH",
+            topic: "Magnetocaloric Hydrogen Liquefaction — From Materials to Prototypes",
+            duration: "30 mins"
+        },
+
+        {
+            type: "talk",
+            start: "11:45 AM",
+            end: "12:15 PM",
+            name: "Prof. Tapas Kumar Nandi",
+            affiliation: "Professor, IIT Kharagpur",
+            topic: "Investigations on a Novel Pressure Wave Refrigerator Using Three-Stage Cooling",
+            duration: "30 mins"
+        },
+
+
+        /* SESSION 4 */
+
+        {
+            type: "session",
+            title: "Session 4 – Cryogenic Infrastructure",
+            chair: "Dr. Tino Gottschall"
+        },
+
+        {
+            type: "talk",
+            start: "12:15 PM",
+            end: "12:45 PM",
+            name: "Prof. Pratap Raychaudhuri",
+            affiliation: "Senior Professor, Department of Condensed Matter Physics and Materials Science (DCMPMS), Tata Institute of Fundamental Research, Mumbai",
+            topic: "TBA",
+            duration: "30 mins"
+        },
+
+        {
+            type: "talk",
+            start: "12:45 PM",
+            end: "01:15 PM",
+            name: "Prof. Danny Baumann",
+            affiliation: "Professor, IFW Dresden – Research Technology Department",
+            topic: "Cryogenic Instruments for Material Science",
+            duration: "30 mins"
+        },
+
+        {
+            type: "break",
+            start: "01:15 PM",
+            end: "02:15 PM",
+            title: "Lunch Break",
+            duration: "60 mins"
+        },
+
+        {
+            type: "talk",
+            start: "02:15 PM",
+            end: "02:45 PM",
+            name: "Dr. Jedidiah Pradhan",
+            affiliation: "Senior Scientific Officer (G) / Head, Helium Technology and Low Temperature Section, Variable Energy Cyclotron Centre (VECC)",
+            topic: "Developmental Activities for Dry Dilution Refrigerator (DryDR) at VECC, Kolkata",
+            duration: "30 mins"
+        },
+
+        {
+            type: "talk",
+            start: "02:45 PM",
+            end: "03:15 PM",
+            name: "Dr. Hagen Schmidt",
+            affiliation: "Professor, IFW Dresden – Institute for Solid State Physics",
+            topic: "Contactless Cryogenic Levelmeter Based on Surface Acoustic Wave Sensors",
+            duration: "30 mins"
+        },
+
+        {
+            type: "poster",
+            start: "03:15 PM",
+            end: "04:15 PM",
+            title: "Poster Presentation",
+            duration: "60 mins"
+        },
+
+        {
+            type: "break",
+            start: "04:15 PM",
+            end: "04:30 PM",
+            title: "Tea Break",
+            duration: "15 mins"
+        },
+
+
+        /* SESSION 5 */
+
+        {
+            type: "session",
+            title: "Session 5 – Storage and Distribution of Cryogenic Fluids",
+            chair: "Prof. Christoph Haberstroh"
+        },
+
+        {
+            type: "talk",
+            start: "04:30 PM",
+            end: "05:00 PM",
+            name: "Dr. Jegesh David",
+            affiliation: "Scientist G, Group Director, IPRC, ISRO",
+            topic: "Earth to Orbit: Cryogenic Production, Storage and Distribution",
+            duration: "30 mins"
+        },
+
+        {
+            type: "talk",
+            start: "05:00 PM",
+            end: "05:30 PM",
+            name: "Dr. Hans Weber",
+            affiliation: "Professor, IFW Dresden",
+            topic: "LH2 Container Logistics — Demand-Driven LH2 Supply for Future Applications",
+            duration: "30 mins"
+        },
+
+        {
+            type: "talk",
+            start: "05:30 PM",
+            end: "06:00 PM",
+            name: "Prof. Indranil Ghosh",
+            affiliation: "Professor, IIT Kharagpur",
+            topic: "Hydrogen Storage by Cryosorption",
+            duration: "30 mins"
+        },
+
+        {
+            type: "talk",
+            start: "06:00 PM",
+            end: "06:30 PM",
+            name: "Dr. Pavitra Sandilya",
+            affiliation: "Associate Professor, IIT Kharagpur",
+            topic: "Emerging Cryogenic Technologies for Clean Energy: Carbon Capture, Energy Recovery and Liquid Cryogenic Fuel Storage",
+            duration: "30 mins"
+        }
+
+    ],
+
+
+    /* =====================================================
+       DAY 3 — 11 NOVEMBER 2026
+    ===================================================== */
+
+    day3: [
+
+        /* SESSION 6 */
+
+        {
+            type: "session",
+            title: "Session 6 – Applied Superconductivity",
+            chair: "Prof. Anindya Chakraborty"
+        },
+
+        {
+            type: "talk",
+            start: "10:00 AM",
+            end: "10:30 AM",
+            name: "Prof. Tripti Sekhar Datta",
+            affiliation: "Former Visiting Professor, IIT Kharagpur; Former Head, Cryogenics and Superconductivity Program, IUAC, Delhi",
+            topic: "Superconductivity and Cryogenics for High Energy Particle Accelerator: Present Trend",
+            duration: "30 mins"
+        },
+
+        {
+            type: "talk",
+            start: "10:30 AM",
+            end: "11:00 AM",
+            name: "Dr. Paul Saß",
+            affiliation: "ScIDre Scientific Instruments Dresden GmbH",
+            topic: "Levitated Bearings Based on HTS Materials in Cryogenic Pumps: Potential and Challenges",
+            duration: "30 mins"
+        },
+
+        {
+            type: "talk",
+            start: "11:00 AM",
+            end: "11:30 AM",
+            name: "Dr. Abhay Singh Gour",
+            affiliation: "Associate Professor, IIT Kharagpur",
+            topic: "Superconducting Technology for Power Applications: An Overview of Research at the Applied Superconductivity Lab",
+            duration: "30 mins"
+        },
+
+        {
+            type: "break",
+            start: "11:30 AM",
+            end: "11:45 AM",
+            title: "Tea Break",
+            duration: "15 mins"
+        },
+
+        {
+            type: "industry",
+            start: "11:45 AM",
+            end: "12:15 PM",
+            title: "Industry Presentations",
+            topic: "Presentations by ATOS, Linde and IHVP",
+            duration: "30 mins"
+        },
+
+        {
+            type: "special",
+            start: "12:15 PM",
+            end: "12:45 PM",
+            title: "Prize Distribution and Closing Remarks",
+            duration: "30 mins"
+        },
+
+        {
+            type: "admin",
+            start: "12:45 PM",
+            end: "01:15 PM",
+            title: "Certificate Distribution by Volunteers",
+            duration: "30 mins"
+        },
+
+        {
+            type: "break",
+            start: "01:30 PM",
+            end: "02:30 PM",
+            title: "Lunch Break",
+            duration: "60 mins"
+        }
+
+    ]
+
+};
+
+
+/* =========================================================
+   SCHEDULE RENDERING
+========================================================= */
+
+function escapeScheduleHTML(value) {
+
+    return String(value ?? "").replace(/[&<>"']/g, char => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+    })[char]);
+
+}
+
+
+function renderScheduleEvent(item) {
+
+    const type = item.type || "admin";
+
+    const classes = {
+        talk: "event-talk",
+        break: "event-break",
+        admin: "event-admin",
+        student: "event-student",
+        faculty: "event-faculty",
+        poster: "event-poster",
+        special: "event-special",
+        industry: "event-industry"
+    };
+
+    const badges = {
+        talk: "Invited Talk",
+        break: "Break",
+        admin: "Programme",
+        student: "Student Presentation",
+        faculty: "Faculty Presentation",
+        poster: "Poster Session",
+        special: "Special Event",
+        industry: "Industry Session"
+    };
+
+    const time = item.start && item.end
+        ? `${item.start} – ${item.end}`
+        : "";
+
+    const heading = item.name || item.title || "";
+
+    const affiliation = item.affiliation
+        ? `<p class="schedule-affiliation">
+                ${escapeScheduleHTML(item.affiliation)}
+           </p>`
+        : "";
+
+    const topic = item.topic
+        ? `<p class="schedule-topic">
+                <strong>Topic:</strong>
+                ${escapeScheduleHTML(item.topic)}
+           </p>`
+        : "";
+
+    const duration = item.duration
+        ? `<span class="schedule-duration">
+                ${escapeScheduleHTML(item.duration)}
+           </span>`
+        : "";
+
+    return `
+
+        <div class="schedule-item ${classes[type] || ""}">
+
+            <div class="schedule-time">
+
+                <span>
+                    ${escapeScheduleHTML(time)}
+                </span>
+
+            </div>
+
+
+            <div class="schedule-content">
+
+                <div class="schedule-card-top">
+
+                    <span class="schedule-badge badge-${type === "talk" ? "keynote" : type === "student" ? "student" : type === "faculty" ? "poster" : type === "break" ? "break" : type === "poster" ? "poster" : type === "industry" ? "industry" : type === "special" ? "special" : "admin"}">
+
+                        ${escapeScheduleHTML(badges[type] || "Programme")}
+
+                    </span>
+
+                    ${duration}
+
+                </div>
+
+
+                <h3>
+                    ${escapeScheduleHTML(heading)}
+                </h3>
+
+                ${affiliation}
+
+                ${topic}
+
+            </div>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =========================================================
+   SESSION HEADER RENDERING
+========================================================= */
+
+function renderSessionHeader(item) {
+
+    return `
+
+        <div class="schedule-session-header">
+
+            <div class="session-heading">
+
+                <h3>
+                    ${escapeScheduleHTML(item.title)}
+                </h3>
+
+                <p>Technical Session</p>
+
+            </div>
+
+            ${
+                item.chair
+                ? `<div class="session-chair">
+                        Session Chair: ${escapeScheduleHTML(item.chair)}
+                   </div>`
+                : ""
+            }
+
+        </div>
+
+    `;
+
+}
+
+
+/* =========================================================
+   GENERATE ALL THREE DAYS
+========================================================= */
+
+function generateConferenceSchedule() {
+
+    Object.keys(conferenceSchedule).forEach(day => {
+
+        const container = document.getElementById(day);
+
+        if (!container) return;
+
+        container.innerHTML = conferenceSchedule[day]
+            .map(item => {
+
+                if (item.type === "session") {
+                    return renderSessionHeader(item);
+                }
+
+                return renderScheduleEvent(item);
+
+            })
+            .join("");
+
+    });
+
+}
+
+
+/* =========================================================
+   DAY SWITCHING
+========================================================= */
+
+function switchScheduleDay(event, dayId) {
+
+    document.querySelectorAll(".schedule-tab-btn")
+        .forEach(button => {
+
+            button.classList.remove("active");
+
+        });
+
+
+    document.querySelectorAll(".schedule-day-panel")
+        .forEach(panel => {
+
+            panel.classList.remove("active");
+
+        });
+
+
+    event.currentTarget.classList.add("active");
+
+
+    const selectedDay = document.getElementById(dayId);
+
+    if (selectedDay) {
+
+        selectedDay.classList.add("active");
+
+    }
+
+}
+
+
+/* =========================================================
+   PRINT / DOWNLOAD SCHEDULE
+========================================================= */
+
+function printConferenceSchedule() {
+
+    window.print();
+
+}
+
+
+/* =========================================================
+   INITIALIZE SCHEDULE
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    generateConferenceSchedule();
+
+});
