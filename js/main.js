@@ -424,10 +424,9 @@ const conferenceSchedule = {
             type: "admin",
             start: "08:00 AM",
             end: "10:00 AM",
-            title: "Delegate Registration & Welcome Kit Collection",
+            title: "Registration",
             duration: "120 mins"
         },
-
         {
             type: "admin",
             start: "10:00 AM",
@@ -435,24 +434,18 @@ const conferenceSchedule = {
             title: "Inaugural Programme",
             duration: "30 mins"
         },
-
         {
             type: "break",
             start: "10:30 AM",
             end: "11:00 AM",
-            title: "High Tea",
+            title: "HIGH TEA",
             duration: "30 mins"
         },
-
-
-        /* SESSION 1 */
-
         {
             type: "session",
-            title: "Session 1 – Cooling and Liquefaction Technologies",
+            title: "Session 1 - Cooling and Liquefaction Technologies",
             chair: "Prof. T. S. Dutta"
         },
-
         {
             type: "talk",
             start: "11:00 AM",
@@ -462,7 +455,6 @@ const conferenceSchedule = {
             topic: "General Aspects in Cryogenics",
             duration: "30 mins"
         },
-
         {
             type: "talk",
             start: "11:30 AM",
@@ -472,17 +464,15 @@ const conferenceSchedule = {
             topic: "Recent Advances in Cryogenic Technology Development at BARC",
             duration: "30 mins"
         },
-
         {
             type: "talk",
             start: "12:00 PM",
             end: "12:30 PM",
             name: "Prof. Dirk Lindackers",
-            affiliation: "Professor, IFW Dresden – Research Technology Department",
+            affiliation: "Professor, Research Technology Department, IFW Dresden",
             topic: "Cryogenic Aspects in a Global Green Hydrogen Economy",
             duration: "30 mins"
         },
-
         {
             type: "talk",
             start: "12:30 PM",
@@ -492,139 +482,128 @@ const conferenceSchedule = {
             topic: "A Novel Turboexpander for Cryogenic Liquefaction Applications",
             duration: "30 mins"
         },
-
         {
             type: "break",
             start: "01:00 PM",
             end: "02:00 PM",
-            title: "Lunch Break",
+            title: "LUNCH BREAK",
             duration: "60 mins"
         },
-
-
-        /* SESSION 2 */
-
         {
             type: "session",
-            title: "Session 2 – Quantum Materials and Technology",
+            title: "Session 2 - Quantum Materials and Technology",
             chair: "Prof. Prasanna Kumar Sahoo"
         },
-
         {
             type: "talk",
             start: "02:00 PM",
             end: "02:30 PM",
             name: "Dr. Prashant C. Upadhya",
             affiliation: "Director, Wadhwani Innovation Network, Centre of Excellence for Quantum Technologies, IISc",
-            topic: "The Cryogenic–Quantum Interface: Enabling Next-Generation Quantum Systems",
+            topic: "The Cryogenic-Quantum Interface: Enabling Next-Generation Quantum Systems",
             duration: "30 mins"
         },
-
         {
             type: "talk",
             start: "02:30 PM",
             end: "03:00 PM",
+            name: "Prof. Pratap Raychaudhuri",
+            affiliation: "Senior Professor, Department of Condensed Matter Physics and Materials Science, Tata Institute of Fundamental Research, Mumbai",
+            topic: "Classical and Quantum Effects on the Vortex State in Superconducting Thin Films",
+            duration: "30 mins"
+        },
+        {
+            type: "talk",
+            start: "03:00 PM",
+            end: "03:30 PM",
+            name: "Dr. Avradeep Pal",
+            affiliation: "Assistant Professor, Physics, Indian Institute of Technology Bombay",
+            topic: "Non-volatile Josephson Memory Devices",
+            duration: "30 mins"
+        },
+        {
+            type: "talk",
+            start: "03:30 PM",
+            end: "04:00 PM",
             name: "Prof. Venimadhav Adyam",
             affiliation: "Professor, IIT Kharagpur",
             topic: "Quantum Materials for Cryogenic Applications",
             duration: "30 mins"
         },
-
-        {
-            type: "talk",
-            start: "03:00 PM",
-            end: "03:30 PM",
-            name: "Prof. Chiranjib Mitra",
-            affiliation: "Professor, Indian Institute of Science Education and Research Kolkata (IISER Kolkata)",
-            topic: "Pulse Schemes for Increasing Coherence Time in an Ensemble of Nitrogen Vacancy Centres in Diamond",
-            duration: "30 mins"
-        },
-
-        {
-            type: "talk",
-            start: "03:30 PM",
-            end: "04:00 PM",
-            name: "Dr. Avradeep Pal",
-            affiliation: "Assistant Professor, Department of Physics, IIT Bombay",
-            topic: "Non-volatile Josephson Memory Devices",
-            duration: "30 mins"
-        },
-
         {
             type: "break",
             start: "04:00 PM",
             end: "04:15 PM",
-            title: "Tea Break",
+            title: "TEA BREAK",
             duration: "15 mins"
         },
-
-
-        /* STUDENT PRESENTATIONS */
-
+        {
+            type: "talk",
+            start: "04:15 PM",
+            end: "04:45 PM",
+            name: "Prof. Chiranjib Mitra",
+            affiliation: "Professor, Indian Institute of Science Education and Research (IISER) Kolkata",
+            topic: "Pulse Schemes for Increasing Coherence Time in an Ensemble of Nitrogen-Vacancy Centres in Diamond",
+            duration: "30 mins"
+        },
         {
             type: "session",
-            title: "Oral Presentations by Students and Faculty",
-            chair: ""
+            title: "Oral Presentations by Students & Faculty",
+            chair: "10 min each"
         },
-
         {
             type: "student",
-            start: "04:15 PM",
-            end: "04:25 PM",
+            start: "04:45 PM",
+            end: "04:55 PM",
             name: "Arjun Garva",
             affiliation: "Research Scholar, IIT Kharagpur",
             topic: "CFD Investigation of Fluid Transient-Induced Cavitation in a Cryogenic Environment",
             duration: "10 mins"
         },
-
         {
             type: "student",
-            start: "04:25 PM",
-            end: "04:35 PM",
+            start: "04:55 PM",
+            end: "05:05 PM",
             name: "Jishad K.",
             affiliation: "Research Scholar, Indian Institute of Space Science and Technology",
             topic: "A Hybrid Mass Transfer Model for Direct Contact Condensation on Structured and Unstructured Meshes: Towards Cryogenic Applications",
             duration: "10 mins"
         },
-
         {
             type: "faculty",
-            start: "04:35 PM",
-            end: "04:45 PM",
+            start: "05:05 PM",
+            end: "05:15 PM",
             name: "Dr. Kishore Singh Patel",
-            affiliation: "Assistant Professor Grade-I, Mechanical Engineering, NIT Rourkela",
+            affiliation: "Assistant Professor Grade-1, Mechanical Engineering, NIT Rourkela",
             topic: "Transient CFD Investigation of Regenerator Thermal Non-Equilibrium in a Free-Piston Stirling Cryocooler",
             duration: "10 mins"
         },
-
         {
             type: "faculty",
-            start: "04:45 PM",
-            end: "04:55 PM",
+            start: "05:15 PM",
+            end: "05:25 PM",
             name: "Dr. B. Kiran Naik",
             affiliation: "Assistant Professor Grade-I, Mechanical Engineering, NIT Rourkela",
             topic: "Novel Magnetoresistive Heat Switch for Ultralow Temperature Refrigeration in Quantum Technologies: A Thermomagnetic Analysis",
             duration: "10 mins"
         },
-
         {
             type: "student",
-            start: "04:55 PM",
-            end: "05:05 PM",
+            start: "05:25 PM",
+            end: "05:35 PM",
             name: "Ayush Kori",
             affiliation: "Undergraduate Student, SVKM's Mithibai College",
             topic: "Development of a Fast-Response, High-Sensitivity, Transistor-Based Temperature Sensor for Cryogenic Applications",
             duration: "10 mins"
         },
-
         {
             type: "special",
-            start: "05:05 PM",
-            end: "06:05 PM",
+            start: "05:35 PM",
+            end: "06:35 PM",
             title: "Panel Discussion",
+            topic: "Cryogenics for Energy Security and Sustainability - A Way Forward",
             duration: "60 mins"
         },
-
         {
             type: "special",
             start: "07:30 PM",
@@ -646,20 +625,18 @@ const conferenceSchedule = {
 
         {
             type: "session",
-            title: "Session 3 – Cryogenic Refrigeration Technology",
+            title: "Session 3 - Cryogenic Refrigeration Technology",
             chair: "Prof. Danny Baumann"
         },
-
         {
             type: "talk",
             start: "09:30 AM",
             end: "10:00 AM",
             name: "Dr. Soumen Kar",
-            affiliation: "Scientist-G, Chief Investigator IMRI-IUAC; In-charge, Cryogenics & Applied Superconductivity Lab, Inter-University Accelerator Centre",
+            affiliation: "ScientistG-, Chief Investigator IMRI-IUAC; In-charge, Cryogenics & Applied Superconductivity Lab, Inter-University Accelerator Centre",
             topic: "Challenges in Cryogenic and Superconducting Technology in Whole-Body MRI Magnets",
             duration: "30 mins"
         },
-
         {
             type: "talk",
             start: "10:00 AM",
@@ -669,35 +646,31 @@ const conferenceSchedule = {
             topic: "Adiabatic Demagnetization Refrigerators for Sub-Kelvin Applications",
             duration: "30 mins"
         },
-
         {
             type: "talk",
             start: "10:30 AM",
             end: "11:00 AM",
             name: "Dipl.-Ing. Christoph Mühsig",
             affiliation: "Engineering Manager, Scientific Vacuum Division, Leybold Dresden GmbH",
-            topic: "Cryo- and Vacuum Solutions for Emerging + Sustainable Technologies",
+            topic: "Cryo- and Vacuum Solutions for Emerging and Sustainable Technologies",
             duration: "30 mins"
         },
-
         {
             type: "break",
             start: "11:00 AM",
             end: "11:15 AM",
-            title: "Tea Break",
+            title: "TEA BREAK",
             duration: "15 mins"
         },
-
         {
             type: "talk",
             start: "11:15 AM",
             end: "11:45 AM",
             name: "Dr. Tino Gottschall",
             affiliation: "Dresden High Magnetic Field Laboratory, Helmholtz-Zentrum Dresden-Rossendorf, Germany, and Magnotherm Solutions GmbH",
-            topic: "Magnetocaloric Hydrogen Liquefaction — From Materials to Prototypes",
+            topic: "Magnetocaloric Hydrogen Liquefaction - From Materials to Prototypes",
             duration: "30 mins"
         },
-
         {
             type: "talk",
             start: "11:45 AM",
@@ -707,123 +680,88 @@ const conferenceSchedule = {
             topic: "Investigations on a Novel Pressure Wave Refrigerator Using Three-Stage Cooling",
             duration: "30 mins"
         },
-
-
-        /* SESSION 4 */
-
         {
             type: "session",
-            title: "Session 4 – Cryogenic Infrastructure",
+            title: "Session 4 - Cryogenic Infrastructure",
             chair: "Dr. Tino Gottschall"
         },
-
         {
             type: "talk",
             start: "12:15 PM",
             end: "12:45 PM",
-            name: "Prof. Pratap Raychaudhuri",
-            affiliation: "Senior Professor, Department of Condensed Matter Physics and Materials Science (DCMPMS), Tata Institute of Fundamental Research, Mumbai",
-            topic: "TBA",
-            duration: "30 mins"
-        },
-
-        {
-            type: "talk",
-            start: "12:45 PM",
-            end: "01:15 PM",
             name: "Prof. Danny Baumann",
-            affiliation: "Professor, IFW Dresden – Research Technology Department",
+            affiliation: "Professor, Research Technology Department, IFW Dresden",
             topic: "Cryogenic Instruments for Material Science",
             duration: "30 mins"
         },
-
         {
             type: "break",
-            start: "01:15 PM",
-            end: "02:15 PM",
-            title: "Lunch Break",
+            start: "12:45 PM",
+            end: "01:45 PM",
+            title: "LUNCH BREAK",
             duration: "60 mins"
         },
-
+        {
+            type: "talk",
+            start: "01:45 PM",
+            end: "02:15 PM",
+            name: "Dr. Jedidiah Pradhan",
+            affiliation: "Senior Scientific Officer (G) & Head, Helium Technology and Low Temperature Section, Variable Energy Cyclotron Centre (VECC)",
+            topic: "Developmental Activities for Dry Dilution Refrigerator (DryDR) at VECC, Kolkata",
+            duration: "30 mins"
+        },
         {
             type: "talk",
             start: "02:15 PM",
             end: "02:45 PM",
-            name: "Dr. Jedidiah Pradhan",
-            affiliation: "Senior Scientific Officer (G) / Head, Helium Technology and Low Temperature Section, Variable Energy Cyclotron Centre (VECC)",
-            topic: "Developmental Activities for Dry Dilution Refrigerator (DryDR) at VECC, Kolkata",
+            name: "Dr. Hagen Schmidt",
+            affiliation: "Professor, Institute for Solid State Physics, IFW Dresden",
+            topic: "Contactless Cryogenic Levelmeter Based on Surface Acoustic Wave Sensors",
             duration: "30 mins"
         },
-
+        {
+            type: "session",
+            title: "Session 5 - Storage and Distribution of Cryogenic Fluids",
+            chair: "Prof. Christoph Haberstroh"
+        },
         {
             type: "talk",
             start: "02:45 PM",
             end: "03:15 PM",
-            name: "Dr. Hagen Schmidt",
-            affiliation: "Professor, IFW Dresden – Institute for Solid State Physics",
-            topic: "Contactless Cryogenic Levelmeter Based on Surface Acoustic Wave Sensors",
-            duration: "30 mins"
-        },
-
-        {
-            type: "poster",
-            start: "03:15 PM",
-            end: "04:15 PM",
-            title: "Poster Presentation",
-            duration: "60 mins"
-        },
-
-        {
-            type: "break",
-            start: "04:15 PM",
-            end: "04:30 PM",
-            title: "Tea Break",
-            duration: "15 mins"
-        },
-
-
-        /* SESSION 5 */
-
-        {
-            type: "session",
-            title: "Session 5 – Storage and Distribution of Cryogenic Fluids",
-            chair: "Prof. Christoph Haberstroh"
-        },
-
-        {
-            type: "talk",
-            start: "04:30 PM",
-            end: "05:00 PM",
             name: "Dr. Jegesh David",
             affiliation: "Scientist G, Group Director, IPRC, ISRO",
             topic: "Earth to Orbit: Cryogenic Production, Storage and Distribution",
             duration: "30 mins"
         },
-
+        {
+            type: "talk",
+            start: "03:15 PM",
+            end: "03:45 PM",
+            name: "Dr. Hans Weber",
+            affiliation: "Professor, IFW Dresden",
+            topic: "LH2 Container Logistics Demand-Driven LH2 Supply for Future Applications",
+            duration: "30 mins"
+        },
+        {
+            type: "poster",
+            start: "03:45 PM",
+            end: "05:00 PM",
+            title: "Poster and Tea Session",
+            duration: "75 mins"
+        },
         {
             type: "talk",
             start: "05:00 PM",
             end: "05:30 PM",
-            name: "Dr. Hans Weber",
-            affiliation: "Professor, IFW Dresden",
-            topic: "LH2 Container Logistics — Demand-Driven LH2 Supply for Future Applications",
-            duration: "30 mins"
-        },
-
-        {
-            type: "talk",
-            start: "05:30 PM",
-            end: "06:00 PM",
             name: "Prof. Indranil Ghosh",
             affiliation: "Professor, IIT Kharagpur",
             topic: "Hydrogen Storage by Cryosorption",
             duration: "30 mins"
         },
-
         {
             type: "talk",
-            start: "06:00 PM",
-            end: "06:30 PM",
+            start: "05:30 PM",
+            end: "06:00 PM",
             name: "Dr. Pavitra Sandilya",
             affiliation: "Associate Professor, IIT Kharagpur",
             topic: "Emerging Cryogenic Technologies for Clean Energy: Carbon Capture, Energy Recovery and Liquid Cryogenic Fuel Storage",
@@ -843,20 +781,18 @@ const conferenceSchedule = {
 
         {
             type: "session",
-            title: "Session 6 – Applied Superconductivity",
+            title: "Session 6 - Applied Superconductivity",
             chair: "Prof. Anindya Chakraborty"
         },
-
         {
             type: "talk",
             start: "10:00 AM",
             end: "10:30 AM",
             name: "Prof. Tripti Sekhar Datta",
-            affiliation: "Former Visiting Professor, IIT Kharagpur; Former Head, Cryogenics and Superconductivity Program, IUAC, Delhi",
-            topic: "Superconductivity and Cryogenics for High Energy Particle Accelerator: Present Trend",
+            affiliation: "Former Visiting Professor, IIT Kharagpur; Former Head, Cryogenics and Superconductivity Programme, IUAC, Delhi",
+            topic: "Superconductivity and Cryogenics for High Energy Particle Accelerators: Present Trend",
             duration: "30 mins"
         },
-
         {
             type: "talk",
             start: "10:30 AM",
@@ -866,7 +802,6 @@ const conferenceSchedule = {
             topic: "Levitated Bearings Based on HTS Materials in Cryogenic Pumps: Potential and Challenges",
             duration: "30 mins"
         },
-
         {
             type: "talk",
             start: "11:00 AM",
@@ -876,32 +811,27 @@ const conferenceSchedule = {
             topic: "Superconducting Technology for Power Applications: An Overview of Research at the Applied Superconductivity Lab",
             duration: "30 mins"
         },
-
         {
             type: "break",
             start: "11:30 AM",
             end: "11:45 AM",
-            title: "Tea Break",
+            title: "TEA BREAK",
             duration: "15 mins"
         },
-
         {
             type: "industry",
             start: "11:45 AM",
             end: "12:15 PM",
-            title: "Industry Presentations",
-            topic: "Presentations by ATOS, Linde and IHVP",
+            title: "Industry Presentations by Linde and IHVP",
             duration: "30 mins"
         },
-
         {
-            type: "special",
+            type: "admin",
             start: "12:15 PM",
             end: "12:45 PM",
             title: "Prize Distribution and Closing Remarks",
             duration: "30 mins"
         },
-
         {
             type: "admin",
             start: "12:45 PM",
@@ -909,12 +839,11 @@ const conferenceSchedule = {
             title: "Certificate Distribution by Volunteers",
             duration: "30 mins"
         },
-
         {
             type: "break",
             start: "01:30 PM",
             end: "02:30 PM",
-            title: "Lunch Break",
+            title: "LUNCH",
             duration: "60 mins"
         }
 
