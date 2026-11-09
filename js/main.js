@@ -295,10 +295,12 @@ document.addEventListener("DOMContentLoaded", () => {
         ".sponsorship-copy, " +
         ".sponsorship-action, " +
         ".venue-copy, " +
-        ".map-frame" +
-        ".gallery-item" +
-        ".gallery-more-card" +
-        ".schedule-item"
+        ".map-frame, " +
+        ".gallery-item, " +
+        ".gallery-more-card, " +
+        ".schedule-item, " +
+        ".current-event-copy, " +
+        ".current-event-details"
     );
 
     if ("IntersectionObserver" in window && revealElements.length) {
@@ -1084,4 +1086,86 @@ document.addEventListener("DOMContentLoaded", function () {
 
     generateConferenceSchedule();
 
+});
+
+/* =========================================================
+   GALLERY FILTERS + RESPONSIVE LIGHTBOX
+========================================================= */
+document.addEventListener("DOMContentLoaded", () => {
+    const lightbox = document.getElementById("galleryLightbox");
+    const archiveGrid = document.getElementById("galleryArchiveGrid");
+    const filterButtons = document.querySelectorAll(".gallery-filter");
+    const countLabel = document.getElementById("galleryPhotoCount");
+
+    // Read image data from the visible gallery cards so the homepage and
+    // archive page share the same lightbox behavior without hard-coded paths.
+    const getVisibleCards = () => Array.from(document.querySelectorAll("[data-gallery-open]")).filter(card => {
+        return !card.hidden && card.querySelector("img");
+    });
+
+    filterButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const filter = button.dataset.filter || "all";
+            filterButtons.forEach(item => {
+                const active = item === button;
+                item.classList.toggle("active", active);
+                item.setAttribute("aria-pressed", String(active));
+            });
+            if (!archiveGrid) return;
+            archiveGrid.querySelectorAll("[data-category]").forEach(card => {
+                card.hidden = filter !== "all" && card.dataset.category !== filter;
+            });
+            const visibleCount = Array.from(archiveGrid.querySelectorAll("[data-category]")).filter(card => !card.hidden).length;
+            if (countLabel) countLabel.textContent = `${String(visibleCount).padStart(2, "0")} PHOTOGRAPHS`;
+        });
+    });
+
+    if (!lightbox) return;
+    const image = lightbox.querySelector(".lightbox-image");
+    const caption = lightbox.querySelector(".lightbox-caption");
+    const counter = lightbox.querySelector(".lightbox-counter");
+    const closeButton = lightbox.querySelector(".lightbox-close");
+    const previousButton = lightbox.querySelector(".lightbox-prev");
+    const nextButton = lightbox.querySelector(".lightbox-next");
+    let currentIndex = 0;
+
+    const openAt = index => {
+        const cards = getVisibleCards();
+        if (!cards.length) return;
+        currentIndex = (index + cards.length) % cards.length;
+        const activeCard = cards[currentIndex];
+        const source = activeCard.querySelector("img");
+        image.src = source.currentSrc || source.src;
+        image.alt = source.alt || "IGCCST 2026 gallery photograph";
+        const title = activeCard.querySelector(".gallery-preview-caption strong, .gallery-card-caption strong");
+        caption.textContent = title ? title.textContent : source.alt;
+        counter.textContent = `${String(currentIndex + 1).padStart(2, "0")} / ${String(cards.length).padStart(2, "0")}`;
+        lightbox.classList.add("is-open");
+        lightbox.setAttribute("aria-hidden", "false");
+        document.body.classList.add("lightbox-open");
+        closeButton.focus();
+    };
+
+    const close = () => {
+        lightbox.classList.remove("is-open");
+        lightbox.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("lightbox-open");
+    };
+
+    document.querySelectorAll("[data-gallery-open]").forEach(card => {
+        card.addEventListener("click", () => {
+            const cards = getVisibleCards();
+            openAt(cards.indexOf(card));
+        });
+    });
+    closeButton.addEventListener("click", close);
+    lightbox.addEventListener("click", event => { if (event.target === lightbox) close(); });
+    previousButton.addEventListener("click", () => openAt(currentIndex - 1));
+    nextButton.addEventListener("click", () => openAt(currentIndex + 1));
+    document.addEventListener("keydown", event => {
+        if (!lightbox.classList.contains("is-open")) return;
+        if (event.key === "Escape") close();
+        if (event.key === "ArrowLeft") openAt(currentIndex - 1);
+        if (event.key === "ArrowRight") openAt(currentIndex + 1);
+    });
 });
