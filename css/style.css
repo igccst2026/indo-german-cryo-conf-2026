@@ -1297,6 +1297,222 @@ img {
 }
 
 
+/* =========================================================
+   CONFERENCE RECORDINGS — IGCCST 2026
+========================================================= */
+
+.conference-recordings-section {
+    padding: 85px 0 95px;
+    background: #ffffff;
+}
+
+.recordings-heading {
+    max-width: 680px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.recordings-heading .eyebrow {
+    display: inline-block;
+    color: #1686b5;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.recordings-heading h2 {
+    margin: 0 0 14px;
+    color: #102b40;
+    font: 800 clamp(32px, 4vw, 46px)/1.15
+          "Manrope", sans-serif;
+    letter-spacing: -1.5px;
+}
+
+.recordings-heading h2 span {
+    color: #1686b5;
+}
+
+.recordings-heading p {
+    max-width: 550px;
+    margin: 0 auto;
+    color: #687b89;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* Grid */
+
+.recordings-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+
+/* Recording card */
+
+.recording-card {
+    display: block;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #e5ebf0;
+    border-radius: 13px;
+    text-decoration: none;
+    color: inherit;
+
+    transition: transform .3s ease,
+                box-shadow .3s ease,
+                border-color .3s ease;
+}
+
+.recording-card:hover {
+    transform: translateY(-6px);
+    border-color: #c4dce9;
+    box-shadow: 0 15px 35px rgba(16, 43, 64, .10);
+}
+
+
+/* Thumbnail */
+
+.recording-thumbnail {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #102b40;
+}
+
+.recording-thumbnail img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .5s ease;
+}
+
+.recording-card:hover .recording-thumbnail img {
+    transform: scale(1.05);
+}
+
+.recording-thumbnail::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, .45),
+        transparent 55%
+    );
+    pointer-events: none;
+}
+
+
+/* Play icon */
+
+.recording-play {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, .95);
+    color: #df2929;
+    border-radius: 50%;
+    font-size: 25px;
+
+    transition: transform .3s ease;
+}
+
+.recording-card:hover .recording-play {
+    transform: translate(-50%, -50%) scale(1.12);
+}
+
+
+/* Day badge */
+
+.recording-day {
+    position: absolute;
+    z-index: 2;
+    left: 15px;
+    bottom: 13px;
+
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+
+/* Information */
+
+.recording-info {
+    padding: 22px 23px 24px;
+}
+
+.recording-date {
+    display: block;
+    margin-bottom: 9px;
+    color: #1686b5;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+}
+
+.recording-info h3 {
+    margin: 0 0 19px;
+    color: #102b40;
+    font: 750 18px/1.4 "Manrope", sans-serif;
+}
+
+.recording-watch {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    color: #167da8;
+    font-size: 12px;
+    font-weight: 800;
+
+    transition: gap .25s ease;
+}
+
+.recording-card:hover .recording-watch {
+    gap: 14px;
+}
+
+
+/* Responsive */
+
+@media (max-width: 900px) {
+    .recordings-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .conference-recordings-section {
+        padding: 65px 0 70px;
+    }
+
+    .recordings-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .recording-info {
+        padding: 19px 20px 22px;
+    }
+}
+
+
 
 
 /* =========================================================
